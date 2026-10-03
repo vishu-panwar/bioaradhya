@@ -16,7 +16,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { margin: 0; padding-top: 76px; background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
@@ -26,7 +26,7 @@ img { display: block; max-width: 100%; }
 .site-shell { overflow: hidden; position: relative; }
 .announcement { background: var(--green-dark); color: #dff7ed; font-size: 12px; text-align: center; padding: 8px 16px; letter-spacing: .03em; }
 .announcement span { color: var(--lime); margin: 0 10px; }
-.header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.98); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(7,95,77,.1); will-change: transform; }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,.98); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(7,95,77,.1); will-change: transform; }
 .nav { min-height: 76px; display: flex; align-items: center; gap: 34px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; flex: none; }
 .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50% 50% 50% 12px; background: var(--green); color: var(--lime); }
@@ -414,7 +414,7 @@ body { font-size: 16px; line-height: 1.5; }
 .product-faq > div:first-child > a { font-size: 12px; }
 
 @media (max-width: 760px) {
-  body { font-size: 16px; }
+  body { font-size: 16px; padding-top: 66px; }
   .container { width: min(100% - 32px, 580px); }
   .announcement { font-size: 11px; line-height: 1.5; }
   .nav { min-height: 70px; }

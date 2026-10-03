@@ -550,10 +550,42 @@ body { font-size: 16px; line-height: 1.5; }
   .card-quality { left: 5px; bottom: 40px; }
   .card-consult { right: 5px; top: 60px; }
   
-  /* Trust strip */
-  .trust-strip { grid-template-columns: 1fr; border-radius: 12px; padding: 15px; }
-  .trust-strip > div { padding: 15px 10px; justify-content: center; text-align: center; flex-direction: column; gap: 8px; }
-  .trust-strip > div:not(:last-child) { border-bottom: 1px solid var(--line); }
+  /* Trust strip - 2x2 Grid */
+  .trust-strip { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0;
+    border-radius: 12px; 
+    padding: 0;
+    position: static;
+    transform: none;
+    margin-top: 30px;
+  }
+  .trust-strip > div { 
+    padding: 18px 12px; 
+    justify-content: center; 
+    text-align: center; 
+    flex-direction: column; 
+    gap: 8px;
+    min-height: 120px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  /* Remove right border from right column */
+  .trust-strip > div:nth-child(2n) {
+    border-right: 0;
+  }
+  /* Remove bottom border from bottom row */
+  .trust-strip > div:nth-child(3),
+  .trust-strip > div:nth-child(4) {
+    border-bottom: 0;
+  }
+  .trust-strip strong {
+    font-size: 11px;
+  }
+  .trust-strip small {
+    font-size: 9px;
+  }
   
   /* Categories */
   .category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }

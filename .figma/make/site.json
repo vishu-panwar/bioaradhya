@@ -1,10 +1,8 @@
 {
-  "description": "Create stunning, responsive landing pages tailored for brands like Bioaradhya Homeopathy, ensuring premium design and engaging user experience.",
-  "robots": {
-    "index": false
-  },
-  "accessibility": {
-    "addBypassLinks": false,
-    "ignoreReducedMotion": false
-  }
+  "lang": "en",
+  "title": "Bioaradhya Homeopathy - Natural Healing & Wellness",
+  "description": "Authentic homeopathic remedies and expert doctor consultations for holistic healing. Quality wellness products for your family.",
+  "head": "",
+  "bodyStart": "",
+  "bodyEnd": ""
 }

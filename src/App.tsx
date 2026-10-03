@@ -352,7 +352,6 @@ function HomePage() {
 }
 
 function ContactPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [topic, setTopic] = useState("General enquiry");
   const [openFaq, setOpenFaq] = useState(0);
@@ -365,26 +364,7 @@ function ContactPage() {
 
   return (
     <div className="site-shell contact-page">
-      <header className="header">
-        <div className="nav container">
-          <a className="brand" href="#/" aria-label="Bioaradhya home">
-            <span className="brand-mark"><Icon name="leaf" size={22} /></span>
-            <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
-          </a>
-          <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="#/shop">Shop</a>
-            <a href="#/concerns">Health concerns</a>
-            <a href="/#consult">Consult a doctor</a>
-            <a href="#/about">About us</a>
-            <a className="active-link" href="#/contact">Contact</a>
-          </nav>
-          <div className="nav-actions contact-nav-actions">
-            <a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Need help?</small><strong>+91 98765 43210</strong></span></a>
-            <button className="icon-btn" aria-label="Account"><Icon name="user" /></button>
-            <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu"><Icon name={menuOpen ? "close" : "menu"} /></button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="contact-hero">
@@ -504,47 +484,15 @@ function ContactPage() {
 
       </main>
 
-      <footer className="footer contact-footer">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
-            <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
-            <div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="/#about">Our doctors</a><a href="/#about">Upload prescription</a><a href="#/contact">Care support</a></div>
-            <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/#about">Journal</a><a href="#/contact">Contact</a></div>
-            <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
-          </div>
-          <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
 
 function AboutPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="site-shell about-page">
-      <header className="header">
-        <div className="nav container">
-          <a className="brand" href="#/" aria-label="Bioaradhya home">
-            <span className="brand-mark"><Icon name="leaf" size={22} /></span>
-            <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
-          </a>
-          <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="#/shop">Shop</a>
-            <a href="#/concerns">Health concerns</a>
-            <a href="/#consult">Consult a doctor</a>
-            <a className="active-link" href="#/about">About us</a>
-            <a href="#/contact">Contact</a>
-          </nav>
-          <div className="nav-actions contact-nav-actions">
-            <a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Need help?</small><strong>+91 98765 43210</strong></span></a>
-            <button className="icon-btn" aria-label="Account"><Icon name="user" /></button>
-            <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu"><Icon name={menuOpen ? "close" : "menu"} /></button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="about-hero">
@@ -678,18 +626,7 @@ function AboutPage() {
         </section>
       </main>
 
-      <footer className="footer contact-footer">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
-            <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
-            <div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="/#about">Upload prescription</a><a href="#/contact">Care support</a></div>
-            <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/#about">Journal</a><a href="#/contact">Contact</a></div>
-            <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
-          </div>
-          <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -710,7 +647,6 @@ const healthConcerns = [
 ];
 
 function ConcernsPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All concerns");
   const [concernQuery, setConcernQuery] = useState("");
   const concernCategories = ["All concerns", "Immunity", "Mind & Sleep", "Digestion", "Skin & Hair", "Women’s Health", "Children’s Care", "Pain & Mobility"];
@@ -721,11 +657,7 @@ function ConcernsPage() {
 
   return (
     <div className="site-shell concerns-page">
-      <header className="header"><div className="nav container">
-        <a className="brand" href="#/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a href="#/shop">Shop</a><a className="active-link" href="#/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="#/about">About us</a><a href="#/contact">Contact</a></nav>
-        <div className="nav-actions contact-nav-actions"><a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Need help?</small><strong>+91 98765 43210</strong></span></a><button className="icon-btn"><Icon name="user" /></button><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? "close" : "menu"} /></button></div>
-      </div></header>
+      <Header />
 
       <main>
         <section className="concerns-hero">
@@ -773,7 +705,7 @@ function ConcernsPage() {
         <section className="concern-cta"><div className="container"><div><span className="eyebrow">Not sure where to begin?</span><h2>Let’s understand it together.</h2><p>Our care team can help you find the right next step—without pressure or guesswork.</p></div><div><a className="btn btn-lime" href="/#consult">Talk to a doctor <Icon name="arrow" /></a><a className="btn btn-outline" href="#/contact">Message our care team</a></div></div></section>
       </main>
 
-      <footer className="footer contact-footer"><div className="container"><div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p></div><div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a></div></div><div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy.</span><span>Privacy policy &nbsp; Terms of use</span></div></div></footer>
+      <Footer />
     </div>
   );
 }
@@ -786,7 +718,6 @@ function ProductDetailsPage() {
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const [activeTab, setActiveTab] = useState("Overview");
   const [openProductFaq, setOpenProductFaq] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
   const relatedProducts = products.filter((item) => item.name !== product.name).slice(0, 4);
   const productFaqs = [
     ["How should I use this product?", "For best results, use only as advised by a qualified homeopathy practitioner. Dosage and frequency may vary according to age, sensitivity, health history, and individual symptoms."],
@@ -797,11 +728,7 @@ function ProductDetailsPage() {
 
   return (
     <div className="site-shell product-page">
-      <header className="header"><div className="nav container">
-        <a className="brand" href="#/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a href="#/shop">Shop</a><a href="#/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="#/about">About us</a><a href="#/contact">Contact</a></nav>
-        <div className="nav-actions contact-nav-actions"><a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Product guidance</small><strong>+91 98765 43210</strong></span></a><button className="icon-btn"><Icon name="user" /></button><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? "close" : "menu"} /></button></div>
-      </div></header>
+      <Header />
 
       <main>
         <div className="product-breadcrumb container"><a href="#/">Home</a><span>/</span><a href="#/shop">Products</a><span>/</span><strong>{product.name}</strong></div>
@@ -860,13 +787,12 @@ function ProductDetailsPage() {
         <section className="related-products"><div className="container"><SectionTitle eyebrow="Continue exploring" title="You may also like" action="View all products" /><div className="product-grid">{relatedProducts.map((item) => <ProductCard key={item.name} product={item} />)}</div></div></section>
       </main>
 
-      <footer className="footer contact-footer"><div className="container"><div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p></div><div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a></div><div><h3>Care</h3><a href="/#consult">Consult a doctor</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a></div></div><div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy.</span><span>Privacy policy &nbsp; Terms of use</span></div></div></footer>
+      <Footer />
     </div>
   );
 }
 
 function ShopPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [shopQuery, setShopQuery] = useState("");
   const [activeShopCategory, setActiveShopCategory] = useState("All products");
   const [sortBy, setSortBy] = useState("Featured");
@@ -887,11 +813,7 @@ function ShopPage() {
 
   return (
     <div className="site-shell shop-page">
-      <header className="header"><div className="nav container">
-        <a className="brand" href="#/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a className="active-link" href="#/shop">Shop</a><a href="#/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="#/about">About us</a><a href="#/contact">Contact</a></nav>
-        <div className="nav-actions"><div className="search-box"><Icon name="search" size={17} /><input value={shopQuery} onChange={(event) => setShopQuery(event.target.value)} placeholder="Search remedies..." /></div><button className="icon-btn"><Icon name="user" /></button><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? "close" : "menu"} /></button></div>
-      </div></header>
+      <Header showSearch={true} query={shopQuery} setQuery={setShopQuery} />
 
       <main>
         <section className="shop-hero">

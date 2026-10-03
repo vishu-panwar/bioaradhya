@@ -100,6 +100,58 @@ function Button({ children, tone = "primary", onClick, type = "button" }: { chil
   return <button type={type} onClick={onClick} className={`btn btn-${tone}`}>{children}</button>;
 }
 
+function Header({ showSearch = false, query, setQuery }: { showSearch?: boolean; query?: string; setQuery?: (val: string) => void }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <header className="header">
+      <div className="nav container">
+        <a className="brand" href="#/" aria-label="Bioaradhya home">
+          <span className="brand-mark"><Icon name="leaf" size={22} /></span>
+          <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
+        </a>
+        <nav className={menuOpen ? "nav-links open" : "nav-links"}>
+          <a href="#/" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="#/shop" onClick={() => setMenuOpen(false)}>Shop</a>
+          <a href="#/concerns" onClick={() => setMenuOpen(false)}>Health concerns</a>
+          <a href="#/about" onClick={() => setMenuOpen(false)}>About us</a>
+          <a href="#/contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </nav>
+        <div className="nav-actions">
+          {showSearch && query !== undefined && setQuery && (
+            <div className="search-box">
+              <Icon name="search" size={17} />
+              <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search remedies..." aria-label="Search remedies" />
+            </div>
+          )}
+          <button className="icon-btn" aria-label="Account"><Icon name="user" /></button>
+          <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu"><Icon name={menuOpen ? "close" : "menu"} /></button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="newsletter">
+          <div><span>WE'RE HERE TO HELP</span><h2>Get in touch.</h2><p>Have a question about a remedy, consultation, or order? Our care team is ready to help.</p></div>
+          <div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
+        </div>
+        <div className="footer-grid">
+          <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+          <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
+          <div><h3>Care</h3><a href="#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/about">Upload prescription</a><a href="#/about">Care support</a></div>
+          <div><h3>Company</h3><a href="#/about">About us</a><a href="#/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="#/contact">Contact</a></div>
+          <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
+        </div>
+        <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
+      </div>
+    </footer>
+  );
+}
+
 function SectionTitle({ title, eyebrow, action }: { title: string; eyebrow?: string; action?: string }) {
   return (
     <div className="section-heading">
@@ -135,35 +187,13 @@ function ProductCard({ product }: { product: typeof products[number] }) {
 }
 
 function HomePage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
 
   const filteredProducts = useMemo(() => products.filter((p) => `${p.name} ${p.use}`.toLowerCase().includes(query.toLowerCase())), [query]);
 
   return (
     <div className="site-shell">
-      <header className="header">
-        <div className="nav container">
-          <a className="brand" href="#top" aria-label="Bioaradhya home">
-            <span className="brand-mark"><Icon name="leaf" size={22} /></span>
-            <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
-          </a>
-          <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="#/shop" onClick={() => setMenuOpen(false)}>Shop</a>
-            <a href="#/concerns" onClick={() => setMenuOpen(false)}>Health concerns</a>
-            <a href="#/about" onClick={() => setMenuOpen(false)}>About us</a>
-            <a href="#/contact" onClick={() => setMenuOpen(false)}>Contact</a>
-          </nav>
-          <div className="nav-actions">
-            <div className="search-box">
-              <Icon name="search" size={17} />
-              <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search remedies..." aria-label="Search remedies" />
-            </div>
-            <button className="icon-btn" aria-label="Account"><Icon name="user" /></button>
-            <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu"><Icon name={menuOpen ? "close" : "menu"} /></button>
-          </div>
-        </div>
-      </header>
+      <Header showSearch={true} query={query} setQuery={setQuery} />
 
       <main id="top">
         <section className="hero">

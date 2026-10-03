@@ -822,34 +822,18 @@ body { font-size: 16px; line-height: 1.5; }
     scroll-snap-align: start;
   }
   
-  /* Category grid - horizontal scroll */
+  /* Category grid - 2x3 GRID (NOT horizontal scroll) */
   .category-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px;
     padding-bottom: 15px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--green-light) transparent;
-  }
-  
-  .category-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-  
-  .category-grid::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .category-grid::-webkit-scrollbar-thumb {
-    background: var(--green-light);
-    border-radius: 10px;
+    overflow-x: visible;
   }
   
   .category-card {
-    flex: 0 0 160px;
-    scroll-snap-align: start;
+    flex: none;
+    min-height: 150px;
   }
   
   /* Promo section - horizontal scroll */

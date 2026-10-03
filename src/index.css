@@ -759,6 +759,32 @@ body { font-size: 16px; line-height: 1.5; }
     scroll-snap-align: start;
   }
   
+  /* Promo section - horizontal scroll */
+  .promo-section {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .promo-section .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 0 20px 20px 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .promo-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    min-height: 380px;
+  }
+  
   /* Testimonial grid - horizontal scroll */
   .testimonial-grid {
     display: flex;
@@ -828,6 +854,10 @@ body { font-size: 16px; line-height: 1.5; }
     flex: 0 0 140px;
   }
   
+  .promo-card {
+    flex: 0 0 90%;
+  }
+  
   .quote-card, .story-image, .metric-card {
     flex: 0 0 90%;
   }
@@ -840,6 +870,7 @@ body { font-size: 16px; line-height: 1.5; }
 /* Smooth scroll behavior */
 .product-grid,
 .category-grid,
+.promo-section .container,
 .testimonial-grid,
 .social-grid {
   scroll-behavior: smooth;
@@ -849,6 +880,7 @@ body { font-size: 16px; line-height: 1.5; }
 @media (max-width: 760px) {
   .product-grid::-webkit-scrollbar,
   .category-grid::-webkit-scrollbar,
+  .promo-section .container::-webkit-scrollbar,
   .testimonial-grid::-webkit-scrollbar,
   .social-grid::-webkit-scrollbar {
     display: none;
@@ -856,6 +888,7 @@ body { font-size: 16px; line-height: 1.5; }
   
   .product-grid,
   .category-grid,
+  .promo-section .container,
   .testimonial-grid,
   .social-grid {
     scrollbar-width: none;

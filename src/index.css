@@ -180,6 +180,7 @@ img { display: block; max-width: 100%; }
 .address-block strong { font-size: 12px; }.address-block p { color: var(--muted); font-size: 10px; line-height: 1.6; margin: 5px 0 9px; }.address-block a { display: inline-flex; align-items: center; gap: 5px; color: var(--green); font-size: 10px; font-weight: 700; }
 .visit-hours { display: flex; gap: 28px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); }.visit-hours span { display: flex; flex-direction: column; }.visit-hours small { color: #8b9893; font-size: 7px; font-weight: 800; letter-spacing: .1em; }.visit-hours strong { font-size: 10px; margin-top: 4px; }
 .visit-image { height: 460px; border-radius: 22px; overflow: hidden; position: relative; }.visit-image > img { width: 100%; height: 100%; object-fit: cover; }.visit-image:after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(3,49,39,.7)); }.visit-image > div { position: absolute; z-index: 2; left: 25px; bottom: 25px; background: white; border-radius: 13px; padding: 12px 15px; display: flex; align-items: center; gap: 10px; color: var(--green); }.visit-image > div strong, .visit-image > div small { display: block; }.visit-image > div strong { color: var(--ink); font-size: 10px; }.visit-image > div small { color: var(--muted); font-size: 8px; margin-top: 2px; }
+.visit-map { height: 460px; border-radius: 22px; overflow: hidden; position: relative; background: var(--cream); border: 1px solid var(--line); }
 .contact-faq { padding-block: 90px; }.contact-faq > div:first-child { display: grid; grid-template-columns: auto 1fr; align-items: end; column-gap: 30px; margin-bottom: 35px; }.contact-faq > div:first-child .eyebrow { grid-column: 1 / -1; }.contact-faq > div:first-child p { color: var(--muted); font-size: 11px; max-width: 330px; margin: 0 0 5px; }
 .quick-answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }.quick-answer-grid a { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 22px; position: relative; transition: .25s; }.quick-answer-grid a:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(3,68,55,.07); }.quick-answer-grid a > span { color: var(--green); font-size: 9px; font-weight: 800; }.quick-answer-grid strong { display: block; font: 700 14px "Manrope"; margin-top: 14px; }.quick-answer-grid p { color: var(--muted); font-size: 9px; margin: 6px 0 0; }.quick-answer-grid svg { position: absolute; right: 18px; top: 18px; color: var(--green); }
 .contact-footer { padding-top: 0; }
@@ -225,7 +226,7 @@ img { display: block; max-width: 100%; }
 @media (max-width: 760px) {
   .container { width: min(100% - 28px, 580px); }.announcement { font-size: 9px; }.nav { min-height: 66px; gap: 10px; }.brand strong { font-size: 17px; }.brand-mark { width: 34px; height: 34px; }.search-box, .icon-btn { display: none; }.nav-actions { margin-left: auto; }
   .nav-links.open { top: 66px; }
-  .hero-inner { display: flex; flex-direction: column; min-height: auto; }.hero-copy { padding: 62px 0 25px; text-align: center; }.hero-kicker { font-size: 10px; }.hero-copy h1 { font-size: clamp(39px, 12vw, 52px); }.hero-copy > p { font-size: 14px; }.hero-buttons { justify-content: center; flex-wrap: wrap; }.hero-proof { justify-content: center; }.hero-visual { width: 100%; height: 440px; }.hero-arch { height: 420px; width: min(350px, 88vw); }.card-quality { left: 0; bottom: 30px; }.card-consult { right: 0; top: 55px; }
+  .hero-inner { display: flex; flex-direction: column; min-height: auto; }.hero-copy { padding: 62px 0 25px; text-align: center; }.hero-kicker { font-size: 10px; }.hero-copy h1 { font-size: clamp(39px, 12vw, 52px); }.hero-copy > p { font-size: 14px; }.hero-buttons { justify-content: center; flex-wrap: wrap; }.hero-proof { display: none; }.hero-visual { width: 100%; height: 440px; }.hero-arch { height: 420px; width: min(350px, 88vw); }.card-quality { left: 0; bottom: 30px; }.card-consult { right: 0; top: 55px; }
   .trust-strip { position: relative; left: auto; bottom: auto; transform: none; width: 100%; border-radius: 0; grid-template-columns: repeat(2, 1fr); padding: 10px 15px; }.trust-strip > div { min-height: 68px; padding: 0 10px; }.trust-strip > div:nth-child(2) { border-right: 0; }.trust-strip > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .section { padding-top: 70px; padding-bottom: 65px; }.section-heading { align-items: center; margin-bottom: 25px; }.section-heading h2 { font-size: 27px; }.text-link { font-size: 0; }.text-link svg { width: 20px; height: 20px; }
   .category-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }.category-card { min-height: 135px; }.product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }.product-card { padding: 8px; border-radius: 13px; }.product-image-wrap { height: 160px; }.product-card h3 { font-size: 11px; }.product-card p { font-size: 8px; }.product-card .btn { padding: 0 5px; font-size: 10px; }.product-tag { left: 8px; top: 8px; }.heart-btn { right: 8px; top: 8px; }
@@ -522,7 +523,7 @@ body { font-size: 16px; line-height: 1.5; }
   .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 50px 0 80px; }
   .hero-copy { max-width: 100%; padding: 40px 0 50px; text-align: center; }
   .hero-buttons { justify-content: center; flex-wrap: wrap; }
-  .hero-proof { justify-content: center; }
+  .hero-proof { display: none; }
   .hero-visual { height: 450px; margin-top: 40px; }
   .trust-strip { position: static; transform: none; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 30px; }
   .trust-strip > div { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 15px; }
@@ -545,23 +546,22 @@ body { font-size: 16px; line-height: 1.5; }
   .section-heading h2 { font-size: clamp(24px, 6vw, 32px); }
   
   /* Hero section */
-  .hero-copy { padding: 30px 0 40px; }
+  .hero-copy { padding: 25px 0 30px; }
   .hero-copy > p { font-size: 15px; }
   .hero-buttons { gap: 10px; width: 100%; }
   .hero-buttons .btn { width: 100%; min-height: 48px; font-size: 13px; }
-  .hero-visual { height: 380px; }
-  .hero-arch { height: 360px; width: 100%; max-width: 350px; }
+  .hero-visual { height: 360px; margin-bottom: 20px; }
+  .hero-arch { height: 340px; width: 100%; max-width: 320px; }
   .floating-card { padding: 10px; }
-  .card-quality { left: 5px; bottom: 40px; }
-  .card-consult { right: 5px; top: 60px; }
+  .card-quality { left: 5px; bottom: 30px; }
+  .card-consult { right: 5px; top: 50px; }
   
-  /* Hero section - extend green background for top half of trust strip */
+  /* Hero section - green background extends to middle of trust strip */
   .hero {
-    padding-bottom: 140px;
-    margin-bottom: -70px;
+    padding-bottom: 120px;
   }
   
-  /* Trust strip - positioned to overlap green and white backgrounds */
+  /* Trust strip - white card positioned to span green/cream backgrounds */
   .trust-strip { 
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -569,19 +569,19 @@ body { font-size: 16px; line-height: 1.5; }
     border-radius: 16px; 
     padding: 0;
     position: relative;
-    margin: 0 auto 30px;
+    margin: -60px auto 30px;
     max-width: calc(100% - 40px);
     box-shadow: 0 15px 45px rgba(3,68,55,.15);
     background: white;
     z-index: 10;
   }
   .trust-strip > div { 
-    padding: 22px 15px; 
+    padding: 18px 12px; 
     justify-content: center; 
     text-align: center; 
     flex-direction: column; 
-    gap: 8px;
-    min-height: 130px;
+    gap: 6px;
+    min-height: 100px;
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
   }
@@ -607,9 +607,9 @@ body { font-size: 16px; line-height: 1.5; }
     color: var(--green);
   }
   
-  /* Categories section - starts where trust strip ends */
-  .section.container {
-    padding-top: 50px;
+  /* First section after hero - reduce top padding since trust strip has negative margin */
+  .hero + .section {
+    padding-top: 120px;
   }
   
   /* Categories - 2x3 Grid (2 columns, 3 rows) - NO horizontal scroll */
@@ -705,12 +705,29 @@ body { font-size: 16px; line-height: 1.5; }
   .contact-hero h1 { font-size: clamp(32px, 8vw, 44px); }
   .contact-hero-note { justify-self: center; }
   
-  .contact-main { grid-template-columns: 1fr; gap: 50px; padding-block: 60px; }
-  .contact-form-card { margin-top: 0; padding: 30px 20px; }
+  .contact-main { 
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+    padding-block: 60px; 
+  }
+  
+  /* Show form first, then contact methods on mobile */
+  .contact-form-card { 
+    order: 1;
+    margin-top: 0; 
+    padding: 30px 20px; 
+  }
+  
+  .contact-details {
+    order: 2;
+  }
+  
   .field-row { grid-template-columns: 1fr; gap: 18px; }
   
   .visit-grid { grid-template-columns: 1fr; gap: 40px; }
   .visit-image img { border-radius: 16px; }
+  .visit-map { height: 360px; border-radius: 16px; }
 }
 
 /* Small mobile devices */

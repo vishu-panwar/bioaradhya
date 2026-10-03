@@ -463,9 +463,17 @@ function ContactPage() {
               </div>
               <div className="visit-hours"><span><small>WEEKDAYS</small><strong>9:00am – 7:00pm</strong></span><span><small>SATURDAY</small><strong>10:00am – 5:00pm</strong></span><span><small>SUNDAY</small><strong>Closed</strong></span></div>
             </div>
-            <div className="visit-image">
-              <img src={photos.pharmacy} alt="Bioaradhya wellness centre and pharmacy" />
-              <div><Icon name="leaf" /><span><strong>Come say hello</strong><small>Walk-ins are always welcome</small></span></div>
+            <div className="visit-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8720487095634!2d77.19088631508216!3d28.556133682452573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sGreen%20Park%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: '18px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Bioaradhya Wellness Centre location"
+              />
             </div>
           </div>
         </section>

@@ -113,7 +113,7 @@ function SectionTitle({ title, eyebrow, action }: { title: string; eyebrow?: str
 }
 
 function productUrl(name: string) {
-  return `/product?item=${encodeURIComponent(name)}`;
+  return `#/product?item=${encodeURIComponent(name)}`;
 }
 
 function ProductCard({ product }: { product: typeof products[number] }) {
@@ -149,10 +149,10 @@ function HomePage() {
             <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
           </a>
           <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="/shop" onClick={() => setMenuOpen(false)}>Shop</a>
-            <a href="/concerns" onClick={() => setMenuOpen(false)}>Health concerns</a>
-            <a href="/about" onClick={() => setMenuOpen(false)}>About us</a>
-            <a href="/contact" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="#/shop" onClick={() => setMenuOpen(false)}>Shop</a>
+            <a href="#/concerns" onClick={() => setMenuOpen(false)}>Health concerns</a>
+            <a href="#/about" onClick={() => setMenuOpen(false)}>About us</a>
+            <a href="#/contact" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
           <div className="nav-actions">
             <div className="search-box">
@@ -305,13 +305,13 @@ function HomePage() {
         <div className="container">
           <div className="newsletter">
             <div><span>WE’RE HERE TO HELP</span><h2>Get in touch.</h2><p>Have a question about a remedy, consultation, or order? Our care team is ready to help.</p></div>
-            <div className="newsletter-actions"><a className="btn btn-lime" href="/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
+            <div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
           </div>
           <div className="footer-grid">
             <div className="footer-about"><a className="brand footer-brand" href="#top"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
-            <div><h3>Shop</h3><a href="/shop">Best sellers</a><a href="/concerns">Health concerns</a><a href="/shop">Mother tinctures</a><a href="/shop">Wellness combos</a></div>
+            <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
             <div><h3>Care</h3><a href="#consult">Book consultation</a><a href="#about">Our doctors</a><a href="#about">Upload prescription</a><a href="#about">Care support</a></div>
-            <div><h3>Company</h3><a href="/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="/contact">Contact</a></div>
+            <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="#/contact">Contact</a></div>
             <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
           </div>
           <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
@@ -337,16 +337,16 @@ function ContactPage() {
     <div className="site-shell contact-page">
       <header className="header">
         <div className="nav container">
-          <a className="brand" href="/" aria-label="Bioaradhya home">
+          <a className="brand" href="#/" aria-label="Bioaradhya home">
             <span className="brand-mark"><Icon name="leaf" size={22} /></span>
             <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
           </a>
           <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="/shop">Shop</a>
-            <a href="/concerns">Health concerns</a>
+            <a href="#/shop">Shop</a>
+            <a href="#/concerns">Health concerns</a>
             <a href="/#consult">Consult a doctor</a>
-            <a href="/about">About us</a>
-            <a className="active-link" href="/contact">Contact</a>
+            <a href="#/about">About us</a>
+            <a className="active-link" href="#/contact">Contact</a>
           </nav>
           <div className="nav-actions contact-nav-actions">
             <a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Need help?</small><strong>+91 98765 43210</strong></span></a>
@@ -477,10 +477,10 @@ function ContactPage() {
       <footer className="footer contact-footer">
         <div className="container">
           <div className="footer-grid">
-            <div className="footer-about"><a className="brand footer-brand" href="/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
-            <div><h3>Shop</h3><a href="/shop">Best sellers</a><a href="/concerns">Health concerns</a><a href="/shop">Mother tinctures</a><a href="/shop">Wellness combos</a></div>
-            <div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="/#about">Our doctors</a><a href="/#about">Upload prescription</a><a href="/contact">Care support</a></div>
-            <div><h3>Company</h3><a href="/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/#about">Journal</a><a href="/contact">Contact</a></div>
+            <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+            <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
+            <div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="/#about">Our doctors</a><a href="/#about">Upload prescription</a><a href="#/contact">Care support</a></div>
+            <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/#about">Journal</a><a href="#/contact">Contact</a></div>
             <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
           </div>
           <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
@@ -497,16 +497,16 @@ function AboutPage() {
     <div className="site-shell about-page">
       <header className="header">
         <div className="nav container">
-          <a className="brand" href="/" aria-label="Bioaradhya home">
+          <a className="brand" href="#/" aria-label="Bioaradhya home">
             <span className="brand-mark"><Icon name="leaf" size={22} /></span>
             <span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span>
           </a>
           <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-            <a href="/shop">Shop</a>
-            <a href="/concerns">Health concerns</a>
+            <a href="#/shop">Shop</a>
+            <a href="#/concerns">Health concerns</a>
             <a href="/#consult">Consult a doctor</a>
-            <a className="active-link" href="/about">About us</a>
-            <a href="/contact">Contact</a>
+            <a className="active-link" href="#/about">About us</a>
+            <a href="#/contact">Contact</a>
           </nav>
           <div className="nav-actions contact-nav-actions">
             <a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Need help?</small><strong>+91 98765 43210</strong></span></a>
@@ -622,7 +622,7 @@ function AboutPage() {
 
         <section className="impact-section">
           <div className="container impact-grid">
-            <div className="impact-copy"><span className="eyebrow">Growing with gratitude</span><h2>Small steps. Meaningful impact.</h2><p>Every consultation, order, and conversation helps us build a more thoughtful future for holistic healthcare.</p><a className="btn btn-light" href="/contact">Connect with us <Icon name="arrow" /></a></div>
+            <div className="impact-copy"><span className="eyebrow">Growing with gratitude</span><h2>Small steps. Meaningful impact.</h2><p>Every consultation, order, and conversation helps us build a more thoughtful future for holistic healthcare.</p><a className="btn btn-light" href="#/contact">Connect with us <Icon name="arrow" /></a></div>
             <div className="impact-stats">
               <div><strong>10k<span>+</span></strong><small>families supported</small></div>
               <div><strong>4.9<span>/5</span></strong><small>customer rating</small></div>
@@ -644,17 +644,17 @@ function AboutPage() {
 
         <section className="about-cta">
           <div className="about-cta-ring" />
-          <div className="container"><span className="eyebrow">Your journey, your pace</span><h2>Ready to feel better,<br />gently?</h2><p>Explore trusted remedies or speak with a qualified homeopathy doctor today.</p><div><a className="btn btn-lime" href="/shop">Explore remedies <Icon name="arrow" /></a><a className="btn btn-outline" href="/#consult">Consult a doctor</a></div></div>
+          <div className="container"><span className="eyebrow">Your journey, your pace</span><h2>Ready to feel better,<br />gently?</h2><p>Explore trusted remedies or speak with a qualified homeopathy doctor today.</p><div><a className="btn btn-lime" href="#/shop">Explore remedies <Icon name="arrow" /></a><a className="btn btn-outline" href="/#consult">Consult a doctor</a></div></div>
         </section>
       </main>
 
       <footer className="footer contact-footer">
         <div className="container">
           <div className="footer-grid">
-            <div className="footer-about"><a className="brand footer-brand" href="/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
-            <div><h3>Shop</h3><a href="/shop">Best sellers</a><a href="/concerns">Health concerns</a><a href="/shop">Mother tinctures</a><a href="/shop">Wellness combos</a></div>
-            <div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="/about">Our doctors</a><a href="/#about">Upload prescription</a><a href="/contact">Care support</a></div>
-            <div><h3>Company</h3><a href="/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/#about">Journal</a><a href="/contact">Contact</a></div>
+            <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+            <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
+            <div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="/#about">Upload prescription</a><a href="#/contact">Care support</a></div>
+            <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/#about">Journal</a><a href="#/contact">Contact</a></div>
             <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
           </div>
           <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
@@ -692,8 +692,8 @@ function ConcernsPage() {
   return (
     <div className="site-shell concerns-page">
       <header className="header"><div className="nav container">
-        <a className="brand" href="/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a href="/shop">Shop</a><a className="active-link" href="/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="/about">About us</a><a href="/contact">Contact</a></nav>
+        <a className="brand" href="#/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
+        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a href="#/shop">Shop</a><a className="active-link" href="#/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="#/about">About us</a><a href="#/contact">Contact</a></nav>
         <div className="nav-actions contact-nav-actions"><a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Need help?</small><strong>+91 98765 43210</strong></span></a><button className="icon-btn"><Icon name="user" /></button><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? "close" : "menu"} /></button></div>
       </div></header>
 
@@ -718,7 +718,7 @@ function ConcernsPage() {
           <div className="category-tabs">{concernCategories.map((category) => <button className={activeCategory === category ? "active" : ""} onClick={() => setActiveCategory(category)} key={category}>{category}</button>)}</div>
           <div className="directory-meta"><span>{visibleConcerns.length} concerns shown</span>{(activeCategory !== "All concerns" || concernQuery) && <button onClick={() => { setActiveCategory("All concerns"); setConcernQuery(""); }}>Clear filters <Icon name="close" size={12} /></button>}</div>
           {visibleConcerns.length ? <div className="concerns-grid">{visibleConcerns.map((concern, index) => <article className={`concern-card tone-${concern.tone}`} key={concern.name}>
-            <div className="concern-card-top"><span><Icon name={concern.icon} size={23} /></span><small>{String(index + 1).padStart(2, "0")}</small></div><em>{concern.category}</em><h3>{concern.name}</h3><p>{concern.copy}</p><div className="concern-tags">{concern.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><a href="/shop">Explore care options <Icon name="arrow" size={16} /></a>
+            <div className="concern-card-top"><span><Icon name={concern.icon} size={23} /></span><small>{String(index + 1).padStart(2, "0")}</small></div><em>{concern.category}</em><h3>{concern.name}</h3><p>{concern.copy}</p><div className="concern-tags">{concern.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><a href="#/shop">Explore care options <Icon name="arrow" size={16} /></a>
           </article>)}</div> : <div className="concerns-empty"><Icon name="search" size={28} /><h3>We couldn’t find that concern.</h3><p>Try another term or speak with our care team for personal guidance.</p><Button onClick={() => { setConcernQuery(""); setActiveCategory("All concerns"); }}>View all concerns</Button></div>}
         </section>
 
@@ -740,10 +740,10 @@ function ConcernsPage() {
         </section>
 
         <section className="safe-care"><div className="container safe-care-grid"><div><span className="safe-shield"><Icon name="shield" size={36} /></span><span className="eyebrow">Responsible wellness</span><h2>Your safety always comes first.</h2></div><div><p>Homeopathy can complement a thoughtful wellness routine, but it is not a replacement for urgent or essential medical care. We encourage informed choices and professional guidance.</p><div className="safety-points"><span><Icon name="check" /> Never discontinue prescribed medication without medical advice.</span><span><Icon name="check" /> Seek emergency care for severe or rapidly worsening symptoms.</span><span><Icon name="check" /> Children, pregnancy, and chronic conditions require doctor guidance.</span></div></div></div></section>
-        <section className="concern-cta"><div className="container"><div><span className="eyebrow">Not sure where to begin?</span><h2>Let’s understand it together.</h2><p>Our care team can help you find the right next step—without pressure or guesswork.</p></div><div><a className="btn btn-lime" href="/#consult">Talk to a doctor <Icon name="arrow" /></a><a className="btn btn-outline" href="/contact">Message our care team</a></div></div></section>
+        <section className="concern-cta"><div className="container"><div><span className="eyebrow">Not sure where to begin?</span><h2>Let’s understand it together.</h2><p>Our care team can help you find the right next step—without pressure or guesswork.</p></div><div><a className="btn btn-lime" href="/#consult">Talk to a doctor <Icon name="arrow" /></a><a className="btn btn-outline" href="#/contact">Message our care team</a></div></div></section>
       </main>
 
-      <footer className="footer contact-footer"><div className="container"><div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p></div><div><h3>Shop</h3><a href="/shop">Best sellers</a><a href="/concerns">Health concerns</a><a href="/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="/contact">Care support</a></div><div><h3>Company</h3><a href="/about">About us</a><a href="/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a></div></div><div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy.</span><span>Privacy policy &nbsp; Terms of use</span></div></div></footer>
+      <footer className="footer contact-footer"><div className="container"><div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p></div><div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a></div></div><div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy.</span><span>Privacy policy &nbsp; Terms of use</span></div></div></footer>
     </div>
   );
 }
@@ -768,13 +768,13 @@ function ProductDetailsPage() {
   return (
     <div className="site-shell product-page">
       <header className="header"><div className="nav container">
-        <a className="brand" href="/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a href="/shop">Shop</a><a href="/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="/about">About us</a><a href="/contact">Contact</a></nav>
+        <a className="brand" href="#/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
+        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a href="#/shop">Shop</a><a href="#/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="#/about">About us</a><a href="#/contact">Contact</a></nav>
         <div className="nav-actions contact-nav-actions"><a className="header-help" href="tel:+919876543210"><Icon name="phone" size={17} /><span><small>Product guidance</small><strong>+91 98765 43210</strong></span></a><button className="icon-btn"><Icon name="user" /></button><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? "close" : "menu"} /></button></div>
       </div></header>
 
       <main>
-        <div className="product-breadcrumb container"><a href="/">Home</a><span>/</span><a href="/shop">Products</a><span>/</span><strong>{product.name}</strong></div>
+        <div className="product-breadcrumb container"><a href="#/">Home</a><span>/</span><a href="#/shop">Products</a><span>/</span><strong>{product.name}</strong></div>
         <section className="product-detail container">
           <div className="product-gallery">
             <div className="thumbnail-list">{gallery.map((image, index) => <button className={activeImage === image ? "active" : ""} onClick={() => setActiveImage(image)} key={image}><img src={image} alt={`${product.name} view ${index + 1}`} /></button>)}</div>
@@ -825,12 +825,12 @@ function ProductDetailsPage() {
           <div className="review-grid"><article><span>★★★★★</span><p>“The packaging was excellent and the care team patiently explained how to speak with a doctor before starting.”</p><div><b>AS</b><strong>Ananya S.<small>Verified customer</small></strong></div></article><article><span>★★★★★</span><p>“Authentic product, quick delivery, and a much more thoughtful experience than a typical online pharmacy.”</p><div><b>RK</b><strong>Rahul K.<small>Verified customer</small></strong></div></article><article><span>★★★★★</span><p>“I appreciated the clear information and follow-up support. Everything felt calm, professional, and reliable.”</p><div><b>NM</b><strong>Neha M.<small>Verified customer</small></strong></div></article></div>
         </div></section>
 
-        <section className="product-faq container"><div><span className="eyebrow">Product questions</span><h2>Good to know.</h2><p>Clear answers for safer, more confident wellness choices.</p><a href="/contact">Still need help? Contact us <Icon name="arrow" size={15} /></a></div><div className="faq-list">{productFaqs.map(([question, answer], index) => <article className="faq-item" key={question}><button onClick={() => setOpenProductFaq(openProductFaq === index ? -1 : index)}><span>{String(index + 1).padStart(2, "0")}</span>{question}<b>{openProductFaq === index ? "−" : "+"}</b></button>{openProductFaq === index && <p>{answer}</p>}</article>)}</div></section>
+        <section className="product-faq container"><div><span className="eyebrow">Product questions</span><h2>Good to know.</h2><p>Clear answers for safer, more confident wellness choices.</p><a href="#/contact">Still need help? Contact us <Icon name="arrow" size={15} /></a></div><div className="faq-list">{productFaqs.map(([question, answer], index) => <article className="faq-item" key={question}><button onClick={() => setOpenProductFaq(openProductFaq === index ? -1 : index)}><span>{String(index + 1).padStart(2, "0")}</span>{question}<b>{openProductFaq === index ? "−" : "+"}</b></button>{openProductFaq === index && <p>{answer}</p>}</article>)}</div></section>
 
         <section className="related-products"><div className="container"><SectionTitle eyebrow="Continue exploring" title="You may also like" action="View all products" /><div className="product-grid">{relatedProducts.map((item) => <ProductCard key={item.name} product={item} />)}</div></div></section>
       </main>
 
-      <footer className="footer contact-footer"><div className="container"><div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p></div><div><h3>Shop</h3><a href="/shop">Best sellers</a><a href="/concerns">Health concerns</a></div><div><h3>Care</h3><a href="/#consult">Consult a doctor</a><a href="/contact">Care support</a></div><div><h3>Company</h3><a href="/about">About us</a><a href="/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a></div></div><div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy.</span><span>Privacy policy &nbsp; Terms of use</span></div></div></footer>
+      <footer className="footer contact-footer"><div className="container"><div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p></div><div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a></div><div><h3>Care</h3><a href="/#consult">Consult a doctor</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a></div></div><div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy.</span><span>Privacy policy &nbsp; Terms of use</span></div></div></footer>
     </div>
   );
 }
@@ -858,8 +858,8 @@ function ShopPage() {
   return (
     <div className="site-shell shop-page">
       <header className="header"><div className="nav container">
-        <a className="brand" href="/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a className="active-link" href="/shop">Shop</a><a href="/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="/about">About us</a><a href="/contact">Contact</a></nav>
+        <a className="brand" href="#/"><span className="brand-mark"><Icon name="leaf" size={22} /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a>
+        <nav className={menuOpen ? "nav-links open" : "nav-links"}><a className="active-link" href="#/shop">Shop</a><a href="#/concerns">Health concerns</a><a href="/#consult">Consult a doctor</a><a href="#/about">About us</a><a href="#/contact">Contact</a></nav>
         <div className="nav-actions"><div className="search-box"><Icon name="search" size={17} /><input value={shopQuery} onChange={(event) => setShopQuery(event.target.value)} placeholder="Search remedies..." /></div><button className="icon-btn"><Icon name="user" /></button><button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? "close" : "menu"} /></button></div>
       </div></header>
 
@@ -896,8 +896,8 @@ function ShopPage() {
 
       <footer className="footer">
         <div className="container">
-          <div className="newsletter"><div><span>WE’RE HERE TO HELP</span><h2>Get in touch.</h2><p>Need help finding the right product or understanding your care options? Our team is ready to listen.</p></div><div className="newsletter-actions"><a className="btn btn-lime" href="/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div></div>
-          <div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div><div><h3>Shop</h3><a href="/shop">All products</a><a href="/shop">Best sellers</a><a href="/concerns">Health concerns</a><a href="/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="/about">Our doctors</a><a href="/contact">Care support</a></div><div><h3>Company</h3><a href="/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div></div>
+          <div className="newsletter"><div><span>WE’RE HERE TO HELP</span><h2>Get in touch.</h2><p>Need help finding the right product or understanding your care options? Our team is ready to listen.</p></div><div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div></div>
+          <div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div><div><h3>Shop</h3><a href="#/shop">All products</a><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div></div>
           <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
         </div>
       </footer>
@@ -906,11 +906,24 @@ function ShopPage() {
 }
 
 function App() {
-  if (window.location.pathname === "/contact") return <ContactPage />;
-  if (window.location.pathname === "/about") return <AboutPage />;
-  if (window.location.pathname === "/concerns") return <ConcernsPage />;
-  if (window.location.pathname === "/product") return <ProductDetailsPage />;
-  if (window.location.pathname === "/shop") return <ShopPage />;
+  const [currentPage, setCurrentPage] = useState(() => {
+    const hash = window.location.hash.slice(1) || "/";
+    return hash;
+  });
+
+  useState(() => {
+    const handleHashChange = () => {
+      setCurrentPage(window.location.hash.slice(1) || "/");
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  });
+
+  if (currentPage === "/contact") return <ContactPage />;
+  if (currentPage === "/about") return <AboutPage />;
+  if (currentPage === "/concerns") return <ConcernsPage />;
+  if (currentPage.startsWith("/product")) return <ProductDetailsPage />;
+  if (currentPage === "/shop") return <ShopPage />;
   return <HomePage />;
 }
 

@@ -555,16 +555,23 @@ body { font-size: 16px; line-height: 1.5; }
   .card-quality { left: 5px; bottom: 40px; }
   .card-consult { right: 5px; top: 60px; }
   
-  /* Trust strip - 2x2 Grid */
+  /* Hero section with extended green background for trust strip */
+  .hero {
+    padding-bottom: 180px;
+    margin-bottom: -120px;
+  }
+  
+  /* Trust strip - half on green, half on white */
   .trust-strip { 
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 0;
-    border-radius: 12px; 
+    border-radius: 16px; 
     padding: 0;
-    position: static;
-    transform: none;
-    margin-top: 30px;
+    position: relative;
+    margin: 0 auto;
+    max-width: calc(100% - 40px);
+    box-shadow: 0 15px 45px rgba(3,68,55,.12);
   }
   .trust-strip > div { 
     padding: 18px 12px; 
@@ -592,10 +599,32 @@ body { font-size: 16px; line-height: 1.5; }
     font-size: 9px;
   }
   
-  /* Categories */
-  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .category-card { min-height: 130px; padding: 15px 10px; }
-  .category-icon { width: 48px; height: 48px; margin-bottom: 10px; }
+  /* Categories section - reduced top padding since trust strip overlaps */
+  #concerns {
+    padding-top: 140px !important;
+  }
+  
+  /* Categories - 2x3 grid (2 columns, up to 3 rows for 6 items) */
+  .category-grid { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px; 
+  }
+  .category-card { 
+    min-height: 140px; 
+    padding: 18px 12px; 
+  }
+  .category-icon { 
+    width: 52px; 
+    height: 52px; 
+    margin-bottom: 12px; 
+  }
+  .category-card strong {
+    font-size: 13px;
+  }
+  .category-card small {
+    font-size: 10px;
+  }
   
   /* Products */
   .product-grid { grid-template-columns: 1fr; gap: 16px; }

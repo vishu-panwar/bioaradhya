@@ -689,3 +689,176 @@ body { font-size: 16px; line-height: 1.5; }
   .icon-btn, .menu-btn { width: 44px; height: 44px; }
   .nav-links a { padding: 12px 0; }
 }
+
+/* ========================================
+   HORIZONTAL SCROLL FOR MOBILE SECTIONS
+   ======================================== */
+
+@media (max-width: 760px) {
+  /* Product grids - horizontal scroll */
+  .product-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--green-light) transparent;
+  }
+  
+  .product-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .product-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .product-grid::-webkit-scrollbar-thumb {
+    background: var(--green-light);
+    border-radius: 10px;
+  }
+  
+  .product-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--green);
+  }
+  
+  .product-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+  
+  /* Category grid - horizontal scroll */
+  .category-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--green-light) transparent;
+  }
+  
+  .category-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .category-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .category-grid::-webkit-scrollbar-thumb {
+    background: var(--green-light);
+    border-radius: 10px;
+  }
+  
+  .category-card {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+  }
+  
+  /* Testimonial grid - horizontal scroll */
+  .testimonial-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .quote-card, .story-image, .metric-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+  
+  /* Social grid - horizontal scroll */
+  .social-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 8px;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .social-grid > div {
+    flex: 0 0 70%;
+    scroll-snap-align: start;
+  }
+  
+  /* Add scroll indicator hint */
+  .product-grid::after,
+  .category-grid::after {
+    content: '';
+    flex: 0 0 1px;
+  }
+  
+  /* Section title with scroll hint */
+  .section-heading {
+    position: relative;
+  }
+  
+  .section-heading::after {
+    content: '← Swipe →';
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+  
+  /* Remove hint after first scroll */
+  .scrolled .section-heading::after {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-card {
+    flex: 0 0 260px;
+  }
+  
+  .category-card {
+    flex: 0 0 140px;
+  }
+  
+  .quote-card, .story-image, .metric-card {
+    flex: 0 0 90%;
+  }
+  
+  .social-grid > div {
+    flex: 0 0 80%;
+  }
+}
+
+/* Smooth scroll behavior */
+.product-grid,
+.category-grid,
+.testimonial-grid,
+.social-grid {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for cleaner look (optional) */
+@media (max-width: 760px) {
+  .product-grid::-webkit-scrollbar,
+  .category-grid::-webkit-scrollbar,
+  .testimonial-grid::-webkit-scrollbar,
+  .social-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .product-grid,
+  .category-grid,
+  .testimonial-grid,
+  .social-grid {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}

@@ -609,14 +609,26 @@ body { font-size: 16px; line-height: 1.5; }
     padding-top: 70px;
   }
   
-  /* Categories - 2x3 grid (2 columns, up to 3 rows for 6 items) */
+  /* Categories - Keep horizontal scroll on mobile */
   .category-grid { 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 12px; 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+  
+  .category-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
   .category-card { 
-    min-height: 140px; 
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+    min-height: 150px; 
     padding: 18px 12px; 
   }
   .category-icon { 

@@ -140,13 +140,13 @@ function Footer() {
           <div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
         </div>
         <div className="footer-grid">
-          <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+          <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
           <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
           <div><h3>Care</h3><a href="#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/about">Upload prescription</a><a href="#/about">Care support</a></div>
           <div><h3>Company</h3><a href="#/about">About us</a><a href="#/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="#/contact">Contact</a></div>
           <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
         </div>
-        <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
+        <div className="footer-bottom"><span>© 2026 Bioaradhya Private Limited. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
       </div>
     </footer>
   );
@@ -338,13 +338,13 @@ function HomePage() {
             <div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
           </div>
           <div className="footer-grid">
-            <div className="footer-about"><a className="brand footer-brand" href="#top"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+            <div className="footer-about"><a className="brand footer-brand" href="#top"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
             <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
             <div><h3>Care</h3><a href="#consult">Book consultation</a><a href="#about">Our doctors</a><a href="#about">Upload prescription</a><a href="#about">Care support</a></div>
             <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="#/contact">Contact</a></div>
             <div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div>
           </div>
-          <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
+          <div className="footer-bottom"><span>© 2026 Bioaradhya Private Limited. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
         </div>
       </footer>
     </div>
@@ -857,8 +857,8 @@ function ShopPage() {
       <footer className="footer">
         <div className="container">
           <div className="newsletter"><div><span>WE’RE HERE TO HELP</span><h2>Get in touch.</h2><p>Need help finding the right product or understanding your care options? Our team is ready to listen.</p></div><div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div></div>
-          <div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div><div><h3>Shop</h3><a href="#/shop">All products</a><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div></div>
-          <div className="footer-bottom"><span>© 2026 Bioaradhya Homeopathy. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
+          <div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div><div><h3>Shop</h3><a href="#/shop">All products</a><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div></div>
+          <div className="footer-bottom"><span>© 2026 Bioaradhya Private Limited. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
         </div>
       </footer>
     </div>

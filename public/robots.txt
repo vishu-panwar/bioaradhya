@@ -1,0 +1,23 @@
+# Robots.txt for Bioaradhya Private Limited
+# https://bioaradhya.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://bioaradhya.com/sitemap.xml
+
+# Disallow admin and development paths
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow all search engines to index
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

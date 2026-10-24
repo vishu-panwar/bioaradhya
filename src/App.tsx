@@ -135,10 +135,6 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="newsletter">
-          <div><span>WE'RE HERE TO HELP</span><h2>Get in touch.</h2><p>Have a question about a remedy, consultation, or order? Our care team is ready to help.</p></div>
-          <div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
-        </div>
         <div className="footer-grid">
           <div className="footer-about"><a className="brand footer-brand" href="#/"><span className="brand-mark"><Icon name="leaf" /></span><span><strong>bioaradhya</strong><small>HOMEOPATHY</small></span></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
           <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
@@ -213,9 +209,7 @@ function HomePage() {
               </div>
             </div>
             <div className="hero-visual">
-              <div className="hero-arch"><img src={photos.doctor} alt="Friendly Bioaradhya homeopathy doctor" /></div>
-              <div className="floating-card card-quality"><span><Icon name="shield" /></span><div><strong>100% authentic</strong><small>Quality assured remedies</small></div></div>
-              <div className="floating-card card-consult"><div className="online-dot" /><div><strong>Doctors online</strong><small>Consult in 15 minutes</small></div></div>
+              <img src="/Cheerful Leafy Medicine Bottle Mascot.png" alt="Bioaradhya Mascot" className="hero-team-image" />
             </div>
           </div>
           <div className="trust-strip container">
@@ -228,13 +222,70 @@ function HomePage() {
 
         <section className="section container" id="concerns">
           <SectionTitle eyebrow="Find your care" title="Shop by health concern" action="View all concerns" />
-          <div className="category-grid">
-            {categories.map(([name, icon], index) => (
-              <button className="category-card" key={name}>
-                <span className={`category-icon category-${index}`}><Icon name={icon} size={25} /></span>
-                <strong>{name}</strong><small>Explore care</small>
+          <div className="category-grid-wrapper">
+            <div className="category-grid">
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Immunity.png" alt="Immunity" /></div>
+                <strong>Immunity</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
-            ))}
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Womens Health.png" alt="Women's Health" /></div>
+                <strong>Women's Health</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Skin & Hair.png" alt="Skin & Hair" /></div>
+                <strong>Skin & Hair</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Digestion.png" alt="Digestion" /></div>
+                <strong>Digestion</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Stress & Sleep.png" alt="Stress & Sleep" /></div>
+                <strong>Stress & Sleep</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Childrens Care.png" alt="Children's Care" /></div>
+                <strong>Children's Care</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              {/* Duplicate for seamless loop */}
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Immunity.png" alt="Immunity" /></div>
+                <strong>Immunity</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Womens Health.png" alt="Women's Health" /></div>
+                <strong>Women's Health</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Skin & Hair.png" alt="Skin & Hair" /></div>
+                <strong>Skin & Hair</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Digestion.png" alt="Digestion" /></div>
+                <strong>Digestion</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Stress & Sleep.png" alt="Stress & Sleep" /></div>
+                <strong>Stress & Sleep</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src="/Childrens Care.png" alt="Children's Care" /></div>
+                <strong>Children's Care</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+            </div>
           </div>
         </section>
 
@@ -376,10 +427,8 @@ function ContactPage() {
               <h1>We’re here to help you feel <em>heard.</em></h1>
               <p>Have a question about a remedy, an order, or your care journey? Our friendly wellness team is ready to guide you.</p>
             </div>
-            <div className="contact-hero-note">
-              <div className="contact-note-icon"><Icon name="phone" size={25} /></div>
-              <div><span>Care team availability</span><strong>Monday–Saturday</strong><small>9:00 AM – 7:00 PM IST</small></div>
-              <span className="status-pill"><i /> Online now</span>
+            <div className="contact-hero-image">
+              <img src="/Leafy Care Team Online.png" alt="Bioaradhya Care Team" />
             </div>
           </div>
         </section>
@@ -459,19 +508,19 @@ function ContactPage() {
               <p>Meet our care team, explore authentic remedies, or collect your online order from our flagship wellness centre.</p>
               <div className="address-block">
                 <span className="map-pin" />
-                <div><strong>Bioaradhya Wellness Centre</strong><p>24, Green Park Main Road<br />New Delhi, Delhi 110016</p><a href="https://maps.google.com" target="_blank" rel="noreferrer">Get directions <Icon name="arrow" size={15} /></a></div>
+                <div><strong>Bioaradhya Private Limited</strong><p>B.P/ 78, Brahmpuri Colony, 100, Futa Rd,<br />Saharanpur, Uttar Pradesh 247001</p><a href="https://maps.app.goo.gl/ca7ER4gT22UTPwUYA" target="_blank" rel="noreferrer">Get directions <Icon name="arrow" size={15} /></a></div>
               </div>
               <div className="visit-hours"><span><small>WEEKDAYS</small><strong>9:00am – 7:00pm</strong></span><span><small>SATURDAY</small><strong>10:00am – 5:00pm</strong></span><span><small>SUNDAY</small><strong>Closed</strong></span></div>
             </div>
             <div className="visit-map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8720487095634!2d77.19088631508216!3d28.556133682452573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sGreen%20Park%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4128.318066187138!2d77.5303843!3d29.935641599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eeb687f275b4b%3A0xadbba1a3b8a27282!2sbioaradhya%20private%20limited!5e1!3m2!1sen!2sin!4v1792738037528!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: '18px' }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="Bioaradhya Wellness Centre location"
               />
             </div>
@@ -479,7 +528,14 @@ function ContactPage() {
         </section>
 
         <section className="faq-section container contact-page-faq" id="faq">
-          <div className="faq-intro"><span className="eyebrow">Need help?</span><h2>Frequently asked questions.</h2><p>Everything you need to know about our remedies, consultations, and delivery.</p><a className="btn btn-outline" href="#contact-form">Talk to our care team</a></div>
+          <div className="faq-intro">
+            <span className="eyebrow">Need help?</span>
+            <h2>Frequently asked questions.</h2>
+            <p>Everything you need to know about our remedies, consultations, and delivery.</p>
+            <div className="faq-mascot">
+              <img src="/Cheerful Herbal Health Mascot.png" alt="Bioaradhya Care Mascot" />
+            </div>
+          </div>
           <div className="faq-list">
             {faqs.map(([question, answer], index) => (
               <article className={`faq-item ${openFaq === index ? "active" : ""}`} key={question}>

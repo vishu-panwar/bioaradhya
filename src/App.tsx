@@ -1,5 +1,16 @@
 import { FormEvent, ReactNode, useMemo, useState } from "react";
 
+// Import images
+import heroMascot from '@/assets/Cheerful Leafy Medicine Bottle Mascot.png';
+import contactTeam from '@/assets/Leafy Care Team Online.png';
+import faqMascot from '@/assets/Cheerful Herbal Health Mascot.png';
+import immunityImg from '@/assets/Immunity.png';
+import womensHealthImg from '@/assets/Womens Health.png';
+import skinHairImg from '@/assets/Skin & Hair.png';
+import digestionImg from '@/assets/Digestion.png';
+import stressSleepImg from '@/assets/Stress & Sleep.png';
+import childrensCareImg from '@/assets/Childrens Care.png';
+
 type IconName =
   | "search"
   | "bag"
@@ -209,7 +220,7 @@ function HomePage() {
               </div>
             </div>
             <div className="hero-visual">
-              <img src="/Cheerful Leafy Medicine Bottle Mascot.png" alt="Bioaradhya Mascot" className="hero-team-image" />
+              <img src={heroMascot} alt="Bioaradhya Mascot" className="hero-team-image" />
             </div>
           </div>
           <div className="trust-strip container">
@@ -225,63 +236,63 @@ function HomePage() {
           <div className="category-grid-wrapper">
             <div className="category-grid">
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Immunity.png" alt="Immunity" /></div>
+                <div className="category-image-wrapper"><img src={immunityImg} alt="Immunity" /></div>
                 <strong>Immunity</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Womens Health.png" alt="Women's Health" /></div>
+                <div className="category-image-wrapper"><img src={womensHealthImg} alt="Women's Health" /></div>
                 <strong>Women's Health</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Skin & Hair.png" alt="Skin & Hair" /></div>
+                <div className="category-image-wrapper"><img src={skinHairImg} alt="Skin & Hair" /></div>
                 <strong>Skin & Hair</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Digestion.png" alt="Digestion" /></div>
+                <div className="category-image-wrapper"><img src={digestionImg} alt="Digestion" /></div>
                 <strong>Digestion</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Stress & Sleep.png" alt="Stress & Sleep" /></div>
+                <div className="category-image-wrapper"><img src={stressSleepImg} alt="Stress & Sleep" /></div>
                 <strong>Stress & Sleep</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Childrens Care.png" alt="Children's Care" /></div>
+                <div className="category-image-wrapper"><img src={childrensCareImg} alt="Children's Care" /></div>
                 <strong>Children's Care</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               {/* Duplicate for seamless loop */}
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Immunity.png" alt="Immunity" /></div>
+                <div className="category-image-wrapper"><img src={immunityImg} alt="Immunity" /></div>
                 <strong>Immunity</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Womens Health.png" alt="Women's Health" /></div>
+                <div className="category-image-wrapper"><img src={womensHealthImg} alt="Women's Health" /></div>
                 <strong>Women's Health</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Skin & Hair.png" alt="Skin & Hair" /></div>
+                <div className="category-image-wrapper"><img src={skinHairImg} alt="Skin & Hair" /></div>
                 <strong>Skin & Hair</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Digestion.png" alt="Digestion" /></div>
+                <div className="category-image-wrapper"><img src={digestionImg} alt="Digestion" /></div>
                 <strong>Digestion</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Stress & Sleep.png" alt="Stress & Sleep" /></div>
+                <div className="category-image-wrapper"><img src={stressSleepImg} alt="Stress & Sleep" /></div>
                 <strong>Stress & Sleep</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
               <button className="category-card">
-                <div className="category-image-wrapper"><img src="/Childrens Care.png" alt="Children's Care" /></div>
+                <div className="category-image-wrapper"><img src={childrensCareImg} alt="Children's Care" /></div>
                 <strong>Children's Care</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
@@ -428,7 +439,7 @@ function ContactPage() {
               <p>Have a question about a remedy, an order, or your care journey? Our friendly wellness team is ready to guide you.</p>
             </div>
             <div className="contact-hero-image">
-              <img src="/Leafy Care Team Online.png" alt="Bioaradhya Care Team" />
+              <img src={contactTeam} alt="Bioaradhya Care Team" />
             </div>
           </div>
         </section>
@@ -533,7 +544,7 @@ function ContactPage() {
             <h2>Frequently asked questions.</h2>
             <p>Everything you need to know about our remedies, consultations, and delivery.</p>
             <div className="faq-mascot">
-              <img src="/Cheerful Herbal Health Mascot.png" alt="Bioaradhya Care Mascot" />
+              <img src={faqMascot} alt="Bioaradhya Care Mascot" />
             </div>
           </div>
           <div className="faq-list">

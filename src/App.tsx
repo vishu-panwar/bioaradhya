@@ -1,15 +1,15 @@
 import { FormEvent, ReactNode, useMemo, useState } from "react";
 
-// Import images
-import heroMascot from '@/assets/Cheerful Leafy Medicine Bottle Mascot.png';
-import contactTeam from '@/assets/Leafy Care Team Online.png';
-import faqMascot from '@/assets/Cheerful Herbal Health Mascot.png';
-import immunityImg from '@/assets/Immunity.png';
-import womensHealthImg from '@/assets/Womens Health.png';
-import skinHairImg from '@/assets/Skin & Hair.png';
-import digestionImg from '@/assets/Digestion.png';
-import stressSleepImg from '@/assets/Stress & Sleep.png';
-import childrensCareImg from '@/assets/Childrens Care.png';
+// Images from public folder - these paths work in both dev and production
+const heroMascot = '/Cheerful Leafy Medicine Bottle Mascot.png';
+const contactTeam = '/Leafy Care Team Online.png';
+const faqMascot = '/Cheerful Herbal Health Mascot.png';
+const immunityImg = '/Immunity.png';
+const womensHealthImg = '/Womens Health.png';
+const skinHairImg = '/Skin & Hair.png';
+const digestionImg = '/Digestion.png';
+const stressSleepImg = '/Stress & Sleep.png';
+const childrensCareImg = '/Childrens Care.png';
 
 type IconName =
   | "search"

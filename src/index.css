@@ -590,7 +590,6 @@ body { font-size: 16px; line-height: 1.5; }
   .trust-strip > div { border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 15px; }
   .trust-strip > div:nth-last-child(-n+2) { border-bottom: 0; }
   
-  .category-grid { grid-template-columns: repeat(3, 1fr); }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .promo-section { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; }
@@ -806,8 +805,8 @@ body { font-size: 16px; line-height: 1.5; }
   /* Buttons */
   .btn { min-height: 42px; padding: 0 16px; font-size: 11px; }
   
-  /* Categories */
-  .category-grid { grid-template-columns: 1fr; }
+  /* Categories - Keep horizontal scroll on mobile */
+  /* .category-grid maintains flex layout from base styles */
   .category-card { min-height: 110px; padding: 12px; }
   
   /* Products */

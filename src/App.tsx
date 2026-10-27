@@ -202,20 +202,16 @@ function productUrl(name: string) {
 function ProductCard({ product }: { product: typeof products[number] }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Get images for this product
-  const productImages = product.name === "Asthamax Drops" 
-    ? [asthamaxImg, asthamaxMascotImg]
-    : [product.image];
+  // Use same 2 images for all products (Asthamax box and mascot)
+  const productImages = [asthamaxImg, asthamaxMascotImg];
   
   // Auto-rotate images every 2 seconds
   useEffect(() => {
-    if (productImages.length > 1) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
-      }, 2000);
-      return () => clearInterval(interval);
-    }
-  }, [productImages.length]);
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     <article className="product-card">

@@ -69,7 +69,7 @@ const photos = {
 };
 
 const products = [
-  { name: "Arnica Montana 30C", use: "Muscle comfort & recovery", price: "₹165", old: "₹190", image: photos.bottles[0], tag: "Save 13%" },
+  { name: "Asthamax Drops", use: "For respiratory problems", price: "₹165", old: "₹190", image: photos.bottles[0], tag: "Save 13%" },
   { name: "Bio Combination No. 28", use: "Everyday vitality tablets", price: "₹210", old: "₹245", image: photos.bottles[1], tag: "Bestseller" },
   { name: "Nux Vomica 30C", use: "Digestive wellness drops", price: "₹175", old: "₹205", image: photos.bottles[2], tag: "Save 15%" },
   { name: "Hair & Scalp Wellness", use: "Nourishing homeopathic blend", price: "₹349", old: "₹399", image: photos.bottles[3], tag: "Popular" },
@@ -80,7 +80,7 @@ const products = [
 ];
 
 const productCategories: Record<string, string> = {
-  "Arnica Montana 30C": "Pain & Mobility",
+  "Asthamax Drops": "Respiratory Care",
   "Bio Combination No. 28": "Everyday Wellness",
   "Nux Vomica 30C": "Digestive Care",
   "Hair & Scalp Wellness": "Skin & Hair",

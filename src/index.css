@@ -321,7 +321,7 @@ img { display: block; max-width: 100%; }
   .promo-card { min-height: 360px; padding: 20px; }
   .promo-card > div { max-width: 100%; }
   .promo-card h2 { font-size: 22px; }
-  .promo-card img { height: 160px; }
+  .promo-card img { height: 180px; object-fit: contain; }
   .doctor-card-copy { width: 82%; }.newsletter form { flex-direction: column; border-radius: 14px; background: transparent; gap: 8px; padding: 0; }.newsletter input { min-height: 45px; background: white; border-radius: 999px; }.newsletter .btn { width: 100%; }
   .purpose-grid { grid-template-columns: 1fr; }.purpose-card { min-height: 260px; }.leader-card { grid-template-columns: 1fr; }.leader-portrait { min-height: 250px; }.impact-stats strong { font-size: 34px; }.about-cta .btn { width: 100%; margin: 5px 0; }
 }
@@ -739,10 +739,10 @@ body { font-size: 16px; line-height: 1.5; }
     position: relative;
     order: 2;
     width: 100%; 
-    height: 180px; 
+    height: 220px; 
     margin-top: auto;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
   

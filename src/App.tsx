@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useMemo, useState } from "react";
+import { FormEvent, ReactNode, useEffect, useMemo, useState } from "react";
 
 // Images from public folder - these paths work in both dev and production
 const heroMascot = '/cheerful-leafy-medicine-bottle-mascot.png';
@@ -201,14 +201,30 @@ function productUrl(name: string) {
 
 function ProductCard({ product }: { product: typeof products[number] }) {
   const [liked, setLiked] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Get images for this product
+  const productImages = product.name === "Asthamax Drops" 
+    ? [asthamaxImg, asthamaxMascotImg]
+    : [product.image];
+  
+  // Auto-rotate images every 2 seconds
+  useEffect(() => {
+    if (productImages.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [productImages.length]);
+  
   return (
     <article className="product-card">
       <span className="product-tag">{product.tag}</span>
       <button className={`heart-btn ${liked ? "liked" : ""}`} onClick={() => setLiked(!liked)} aria-label={`Save ${product.name}`}>
         <Icon name="heart" size={17} />
       </button>
-      <div className="product-image-wrap"><img src={product.image} alt={product.name} /></div>
-      <div className="rating"><Icon name="star" size={12} /> 4.8 <span>(120)</span></div>
+      <div className="product-image-wrap"><img src={productImages[currentImageIndex]} alt={product.name} /></div>
       <h3>{product.name}</h3>
       <p>{product.use}</p>
       <div className="price-row"><strong>{product.price}</strong><del>{product.old}</del></div>

@@ -10,6 +10,7 @@ const skinHairImg = '/skin-and-hair.png';
 const digestionImg = '/digestion.png';
 const stressSleepImg = '/stress-and-sleep.png';
 const childrensCareImg = '/childrens-care.png';
+const asthamaxImg = '/asthamax-drops.png';
 
 type IconName =
   | "search"
@@ -69,7 +70,7 @@ const photos = {
 };
 
 const products = [
-  { name: "Asthamax Drops", use: "For respiratory problems", price: "₹165", old: "₹190", image: photos.bottles[0], tag: "Save 13%" },
+  { name: "Asthamax Drops", use: "For respiratory problems", price: "₹165", old: "₹190", image: asthamaxImg, tag: "Save 13%" },
   { name: "Bio Combination No. 28", use: "Everyday vitality tablets", price: "₹210", old: "₹245", image: photos.bottles[1], tag: "Bestseller" },
   { name: "Nux Vomica 30C", use: "Digestive wellness drops", price: "₹175", old: "₹205", image: photos.bottles[2], tag: "Save 15%" },
   { name: "Hair & Scalp Wellness", use: "Nourishing homeopathic blend", price: "₹349", old: "₹399", image: photos.bottles[3], tag: "Popular" },
@@ -88,6 +89,35 @@ const productCategories: Record<string, string> = {
   "SBL Liv-T Support": "Digestive Care",
   "Stress & Sleep Drops": "Mind & Sleep",
   "Immune Care Combo": "Immunity",
+};
+
+const productDetails: Record<string, {
+  composition: string[];
+  presentation: string;
+  dosage: string;
+  overview?: string;
+  benefits?: string[];
+}> = {
+  "Asthamax Drops": {
+    composition: [
+      "Aspidosperma 3x",
+      "Blatta Orientalis Q",
+      "Grindelia Robusta 3x",
+      "Ipecacuanha 3x",
+      "Lobelia Inflata 3x",
+      "Senega 3x",
+      "Yerba Santa Q"
+    ],
+    presentation: "30ML pack",
+    dosage: "20 drops 4 times daily or as directed by the physician",
+    overview: "Asthamax Drops is a carefully formulated homeopathic preparation designed to support respiratory wellness. This blend combines traditional homeopathic ingredients known for their role in addressing respiratory concerns, making it a trusted companion for those seeking natural support for breathing comfort.",
+    benefits: [
+      "Supports healthy respiratory function",
+      "May help ease breathing discomfort",
+      "Complements a holistic respiratory care routine",
+      "Gentle formulation suitable for regular use under guidance"
+    ]
+  }
 };
 
 const categories = [
@@ -774,6 +804,7 @@ function ProductDetailsPage() {
   const requestedName = new URLSearchParams(window.location.search).get("item");
   const product = products.find((item) => item.name === requestedName) ?? products[0];
   const productIndex = products.indexOf(product);
+  const customDetails = productDetails[product.name];
   const gallery = [product.image, photos.bottles[(productIndex + 2) % photos.bottles.length], photos.bottles[(productIndex + 4) % photos.bottles.length], photos.bottles[(productIndex + 6) % photos.bottles.length]];
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const [activeTab, setActiveTab] = useState("Overview");
@@ -810,7 +841,7 @@ function ProductDetailsPage() {
               <div><span><Icon name="user" /></span><strong>Expert guidance</strong><small>Doctor support whenever you need it</small></div>
             </div>
             <div className="product-options">
-              <span>Available size</span><div><button className="active">30 ml</button><button>100 ml</button></div>
+              <span>Available size</span><div><button className="active">{customDetails?.presentation || "30 ml"}</button></div>
             </div>
             <div className="product-guidance-box">
               <div><Icon name="user" size={22} /><span><strong>Not sure if this is right for you?</strong><small>Speak with a qualified practitioner for personal guidance.</small></span></div>
@@ -824,10 +855,10 @@ function ProductDetailsPage() {
           <div className="container">
             <div className="info-tabs">{["Overview", "Benefits", "How to use", "Ingredients & safety"].map((tab) => <button className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)} key={tab}>{tab}</button>)}</div>
             <div className="info-panel">
-              {activeTab === "Overview" && <><div><span className="eyebrow">Product overview</span><h2>Everyday wellness, thoughtfully supported.</h2><p>{product.name} is a carefully sourced homeopathic preparation selected to support {product.use.toLowerCase()}. Its gentle format makes it a considered addition to a practitioner-guided wellness routine.</p><p>Homeopathy is highly individualised. For meaningful guidance, a practitioner considers not only the primary concern but also personal patterns, triggers, routines, and overall wellbeing.</p></div><div className="info-stat-grid"><span><strong>30 ml</strong><small>Net quantity</small></span><span><strong>GMP</strong><small>Quality standard</small></span><span><strong>36 mo</strong><small>Shelf life</small></span><span><strong>India</strong><small>Country of origin</small></span></div></>}
-              {activeTab === "Benefits" && <><div><span className="eyebrow">Potential benefits</span><h2>Designed to complement whole-person care.</h2><p>When selected appropriately by a qualified professional, this remedy may support the following areas as part of an individualised care plan.</p></div><div className="benefit-list"><span><Icon name="check" /> Supports everyday balance and comfort</span><span><Icon name="check" /> Complements a personalised wellness routine</span><span><Icon name="check" /> Gentle format for practitioner-guided use</span><span><Icon name="check" /> Easy to include in daily care</span></div></>}
-              {activeTab === "How to use" && <><div><span className="eyebrow">Usage guidance</span><h2>Use with clarity and professional advice.</h2><p>Dosage should be determined by a qualified homeopathy practitioner. Avoid self-prescribing for persistent, severe, or recurring symptoms.</p></div><div className="usage-steps"><span><b>01</b><strong>Consult</strong><small>Share your complete health history.</small></span><span><b>02</b><strong>Follow</strong><small>Use only the advised dose and frequency.</small></span><span><b>03</b><strong>Observe</strong><small>Keep track of changes and responses.</small></span><span><b>04</b><strong>Review</strong><small>Follow up before changing your plan.</small></span></div></>}
-              {activeTab === "Ingredients & safety" && <><div><span className="eyebrow">What’s inside</span><h2>Clear information. Responsible use.</h2><p>Contains a homeopathic preparation in a standard dispensing base. Exact composition and potency are printed on the product label and may vary by selected format.</p></div><div className="safety-detail"><strong>Important safety information</strong><ul><li>Read the label carefully before use.</li><li>Keep away from direct sunlight and strong odours.</li><li>Keep out of reach of children.</li><li>Consult a doctor during pregnancy, breastfeeding, or for chronic conditions.</li></ul></div></>}
+              {activeTab === "Overview" && <><div><span className="eyebrow">Product overview</span><h2>Everyday wellness, thoughtfully supported.</h2><p>{customDetails?.overview || `${product.name} is a carefully sourced homeopathic preparation selected to support ${product.use.toLowerCase()}. Its gentle format makes it a considered addition to a practitioner-guided wellness routine.`}</p><p>Homeopathy is highly individualised. For meaningful guidance, a practitioner considers not only the primary concern but also personal patterns, triggers, routines, and overall wellbeing.</p></div><div className="info-stat-grid"><span><strong>{customDetails?.presentation || "30 ml"}</strong><small>Net quantity</small></span><span><strong>GMP</strong><small>Quality standard</small></span><span><strong>36 mo</strong><small>Shelf life</small></span><span><strong>India</strong><small>Country of origin</small></span></div></>}
+              {activeTab === "Benefits" && <><div><span className="eyebrow">Potential benefits</span><h2>Designed to complement whole-person care.</h2><p>When selected appropriately by a qualified professional, this remedy may support the following areas as part of an individualised care plan.</p></div><div className="benefit-list">{(customDetails?.benefits || ["Supports everyday balance and comfort", "Complements a personalised wellness routine", "Gentle format for practitioner-guided use", "Easy to include in daily care"]).map((benefit) => <span key={benefit}><Icon name="check" /> {benefit}</span>)}</div></>}
+              {activeTab === "How to use" && <><div><span className="eyebrow">Usage guidance</span><h2>Use with clarity and professional advice.</h2><p>{customDetails?.dosage ? `Recommended dosage: ${customDetails.dosage}` : "Dosage should be determined by a qualified homeopathy practitioner. Avoid self-prescribing for persistent, severe, or recurring symptoms."}</p></div><div className="usage-steps"><span><b>01</b><strong>Consult</strong><small>Share your complete health history.</small></span><span><b>02</b><strong>Follow</strong><small>Use only the advised dose and frequency.</small></span><span><b>03</b><strong>Observe</strong><small>Keep track of changes and responses.</small></span><span><b>04</b><strong>Review</strong><small>Follow up before changing your plan.</small></span></div></>}
+              {activeTab === "Ingredients & safety" && <><div><span className="eyebrow">What’s inside</span><h2>Clear information. Responsible use.</h2><p>{customDetails?.composition ? <><strong>Composition (Each 5ml Contains):</strong><br /><ul style={{ listStyle: "disc", paddingLeft: "20px", marginTop: "12px" }}>{customDetails.composition.map((ingredient) => <li key={ingredient} style={{ marginBottom: "8px" }}>{ingredient}</li>)}</ul></> : "Contains a homeopathic preparation in a standard dispensing base. Exact composition and potency are printed on the product label and may vary by selected format."}</p></div><div className="safety-detail"><strong>Important safety information</strong><ul><li>Read the label carefully before use.</li><li>Keep away from direct sunlight and strong odours.</li><li>Keep out of reach of children.</li><li>Consult a doctor during pregnancy, breastfeeding, or for chronic conditions.</li></ul></div></>}
             </div>
           </div>
         </section>

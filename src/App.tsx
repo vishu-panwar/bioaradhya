@@ -117,7 +117,7 @@ function Header({ showSearch = false, query, setQuery }: { showSearch?: boolean;
     <header className="header">
       <div className="nav container">
         <a className="brand" href="#/" aria-label="Bioaradhya home">
-          <img src="/WhatsApp Image 2026-10-22 at 6.29.51 PM.jpeg" alt="Bioaradhya Logo" className="brand-logo" />
+          <img src="/logo.jpeg" alt="Bioaradhya Logo" className="brand-logo" />
         </a>
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
           <a href="#/" onClick={() => setMenuOpen(false)}>Home</a>
@@ -140,7 +140,7 @@ function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
-          <div className="footer-about"><a className="brand footer-brand" href="#/"><img src="/WhatsApp Image 2026-10-22 at 6.29.51 PM.jpeg" alt="Bioaradhya Logo" className="brand-logo" /></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+          <div className="footer-about"><a className="brand footer-brand" href="#/"><img src="/logo.jpeg" alt="Bioaradhya Logo" className="brand-logo" /></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
           <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
           <div><h3>Care</h3><a href="#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/about">Upload prescription</a><a href="#/about">Care support</a></div>
           <div><h3>Company</h3><a href="#/about">About us</a><a href="#/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="#/contact">Contact</a></div>
@@ -301,11 +301,11 @@ function HomePage() {
         <section className="promo-section container">
           <article className="promo-card promo-women">
             <div><span className="eyebrow">Women’s wellness</span><h2>Care that grows with you.</h2><p>Personalised support for every stage of womanhood.</p><Button tone="primary">Explore women’s care <Icon name="arrow" /></Button></div>
-            <img src="/Kawaii Heart of Motherhood.png" alt="Woman enjoying a calm wellness moment" />
+            <img src="/motherhood-mascot.png" alt="Woman enjoying a calm wellness moment" />
           </article>
           <article className="promo-card promo-stress">
             <div><span className="eyebrow">Stress & sleep</span><h2>Restore your natural rhythm.</h2><p>Gentle support to help you feel calm, rested, and renewed.</p><Button tone="light">Find your remedy <Icon name="arrow" /></Button></div>
-            <img src="/Stress & Sleep.png" alt="Natural homeopathic wellness bottles" />
+            <img src="/stress-sleep-mascot.png" alt="Natural homeopathic wellness bottles" />
           </article>
         </section>
 
@@ -362,7 +362,7 @@ function HomePage() {
               <ul><li><Icon name="check" size={15} /> Qualified practitioners</li><li><Icon name="check" size={15} /> Secure video consultation</li><li><Icon name="check" size={15} /> Thoughtful follow-up care</li></ul>
               <Button tone="lime">Book consultation <Icon name="arrow" /></Button>
             </div>
-            <img src="/Cheerful Eco Doctor Mascot.png" alt="Bioaradhya homeopathy specialist" />
+            <img src="/doctor-mascot.png" alt="Bioaradhya homeopathy specialist" />
           </article>
           <article className="app-card">
             <div><span className="eyebrow">Care on the go</span><h2>Wellness, always within reach.</h2><p>Order remedies, talk to your doctor, and track your health journey in one simple app.</p>
@@ -389,7 +389,7 @@ function HomePage() {
             <div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div>
           </div>
           <div className="footer-grid">
-            <div className="footer-about"><a className="brand footer-brand" href="#top"><img src="/WhatsApp Image 2026-10-22 at 6.29.51 PM.jpeg" alt="Bioaradhya Logo" className="brand-logo" /></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
+            <div className="footer-about"><a className="brand footer-brand" href="#top"><img src="/logo.jpeg" alt="Bioaradhya Logo" className="brand-logo" /></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div>
             <div><h3>Shop</h3><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Mother tinctures</a><a href="#/shop">Wellness combos</a></div>
             <div><h3>Care</h3><a href="#consult">Book consultation</a><a href="#about">Our doctors</a><a href="#about">Upload prescription</a><a href="#about">Care support</a></div>
             <div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#about">Journal</a><a href="#/contact">Contact</a></div>
@@ -913,7 +913,7 @@ function ShopPage() {
       <footer className="footer">
         <div className="container">
           <div className="newsletter"><div><span>WE’RE HERE TO HELP</span><h2>Get in touch.</h2><p>Need help finding the right product or understanding your care options? Our team is ready to listen.</p></div><div className="newsletter-actions"><a className="btn btn-lime" href="#/contact">Contact our team <Icon name="arrow" /></a><a className="footer-phone-link" href="tel:+919876543210"><Icon name="phone" /><span><small>CALL US</small><strong>+91 98765 43210</strong></span></a></div></div>
-          <div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><img src="/WhatsApp Image 2026-10-22 at 6.29.51 PM.jpeg" alt="Bioaradhya Logo" className="brand-logo" /></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div><div><h3>Shop</h3><a href="#/shop">All products</a><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div></div>
+          <div className="footer-grid"><div className="footer-about"><a className="brand footer-brand" href="#/"><img src="/logo.jpeg" alt="Bioaradhya Logo" className="brand-logo" /></a><p>A brand of Bioaradhya Private Limited. Modern homeopathy rooted in thoughtful care. Helping families feel better, gently and naturally.</p><div className="social-icons"><button><Icon name="instagram" /></button><button>f</button><button>in</button></div></div><div><h3>Shop</h3><a href="#/shop">All products</a><a href="#/shop">Best sellers</a><a href="#/concerns">Health concerns</a><a href="#/shop">Wellness combos</a></div><div><h3>Care</h3><a href="/#consult">Book consultation</a><a href="#/about">Our doctors</a><a href="#/contact">Care support</a></div><div><h3>Company</h3><a href="#/about">About us</a><a href="/about#philosophy">Our philosophy</a><a href="#/contact">Contact</a></div><div><h3>Contact</h3><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:care@bioaradhya.in">care@bioaradhya.in</a><p>Mon–Sat, 9am–7pm</p></div></div>
           <div className="footer-bottom"><span>© 2026 Bioaradhya Private Limited. All rights reserved.</span><span>Privacy policy &nbsp; Terms of use &nbsp; Shipping policy</span></div>
         </div>
       </footer>

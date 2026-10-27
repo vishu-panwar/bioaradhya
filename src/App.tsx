@@ -200,7 +200,6 @@ function productUrl(name: string) {
 }
 
 function ProductCard({ product }: { product: typeof products[number] }) {
-  const [liked, setLiked] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Get images for this product
@@ -221,9 +220,6 @@ function ProductCard({ product }: { product: typeof products[number] }) {
   return (
     <article className="product-card">
       <span className="product-tag">{product.tag}</span>
-      <button className={`heart-btn ${liked ? "liked" : ""}`} onClick={() => setLiked(!liked)} aria-label={`Save ${product.name}`}>
-        <Icon name="heart" size={17} />
-      </button>
       <div className="product-image-wrap"><img src={productImages[currentImageIndex]} alt={product.name} /></div>
       <h3>{product.name}</h3>
       <p>{product.use}</p>

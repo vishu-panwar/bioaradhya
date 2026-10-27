@@ -805,7 +805,7 @@ function ProductDetailsPage() {
   const product = products.find((item) => item.name === requestedName) ?? products[0];
   const productIndex = products.indexOf(product);
   const customDetails = productDetails[product.name];
-  const gallery = [product.image, photos.bottles[(productIndex + 2) % photos.bottles.length], photos.bottles[(productIndex + 4) % photos.bottles.length], photos.bottles[(productIndex + 6) % photos.bottles.length]];
+  const gallery = customDetails ? [product.image] : [product.image, photos.bottles[(productIndex + 2) % photos.bottles.length], photos.bottles[(productIndex + 4) % photos.bottles.length], photos.bottles[(productIndex + 6) % photos.bottles.length]];
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const [activeTab, setActiveTab] = useState("Overview");
   const [openProductFaq, setOpenProductFaq] = useState(0);

@@ -297,37 +297,6 @@ function HomePage() {
                 <strong>Children's Care</strong>
                 <small>Explore care <Icon name="arrow" size={12} /></small>
               </button>
-              {/* Duplicate for seamless loop */}
-              <button className="category-card">
-                <div className="category-image-wrapper"><img src={immunityImg} alt="Immunity" /></div>
-                <strong>Immunity</strong>
-                <small>Explore care <Icon name="arrow" size={12} /></small>
-              </button>
-              <button className="category-card">
-                <div className="category-image-wrapper"><img src={womensHealthImg} alt="Women's Health" /></div>
-                <strong>Women's Health</strong>
-                <small>Explore care <Icon name="arrow" size={12} /></small>
-              </button>
-              <button className="category-card">
-                <div className="category-image-wrapper"><img src={skinHairImg} alt="Skin & Hair" /></div>
-                <strong>Skin & Hair</strong>
-                <small>Explore care <Icon name="arrow" size={12} /></small>
-              </button>
-              <button className="category-card">
-                <div className="category-image-wrapper"><img src={digestionImg} alt="Digestion" /></div>
-                <strong>Digestion</strong>
-                <small>Explore care <Icon name="arrow" size={12} /></small>
-              </button>
-              <button className="category-card">
-                <div className="category-image-wrapper"><img src={stressSleepImg} alt="Stress & Sleep" /></div>
-                <strong>Stress & Sleep</strong>
-                <small>Explore care <Icon name="arrow" size={12} /></small>
-              </button>
-              <button className="category-card">
-                <div className="category-image-wrapper"><img src={childrensCareImg} alt="Children's Care" /></div>
-                <strong>Children's Care</strong>
-                <small>Explore care <Icon name="arrow" size={12} /></small>
-              </button>
             </div>
           </div>
         </section>

@@ -522,7 +522,7 @@ function ContactPage() {
         {submitted && (
           <section className="success-banner container">
             <span><Icon name="check" size={25} /></span>
-            <div><strong>Thank you for reaching out.</strong><p>We’ve received your message. A Bioaradhya care specialist will respond within four working hours.</p></div>
+            <div><strong>Thank you for reaching out.</strong><p>We’ve received your message. A Bioaradhya care specialist will respond within 24 hours.</p></div>
             <button onClick={() => setSubmitted(false)} aria-label="Close message"><Icon name="close" /></button>
           </section>
         )}
@@ -533,17 +533,17 @@ function ContactPage() {
             <h2>Connect with our care team.</h2>
             <p className="contact-lead">Real people, thoughtful answers, and no rushed conversations. Reach us through your preferred channel.</p>
             <div className="contact-methods">
-              <a className="contact-method" href="tel:+919876543210">
+              <a className="contact-method" href="tel:+918630375856">
                 <span className="method-icon"><Icon name="phone" /></span>
-                <span><small>CALL OUR CARE TEAM</small><strong>+91 98765 43210</strong><em>Mon–Sat, 9am–7pm</em></span>
+                <span><small>CALL OUR CARE TEAM</small><strong>+91 86303 75856</strong><em>Mon–Sat, 9am–7pm</em></span>
                 <Icon name="arrow" />
               </a>
-              <a className="contact-method" href="mailto:care@bioaradhya.in">
+              <a className="contact-method" href="mailto:contact@bioaradhya.com">
                 <span className="method-icon method-email">@</span>
-                <span><small>EMAIL US</small><strong>care@bioaradhya.in</strong><em>Replies within 4 working hours</em></span>
+                <span><small>EMAIL US</small><strong>contact@bioaradhya.com</strong><em>Replies within 24 hours</em></span>
                 <Icon name="arrow" />
               </a>
-              <a className="contact-method" href="https://wa.me/919876543210" target="_blank" rel="noreferrer">
+              <a className="contact-method" href="https://wa.me/918630375856" target="_blank" rel="noreferrer">
                 <span className="method-icon method-chat">••</span>
                 <span><small>CHAT ON WHATSAPP</small><strong>Start a conversation</strong><em>Quick help for orders and products</em></span>
                 <Icon name="arrow" />

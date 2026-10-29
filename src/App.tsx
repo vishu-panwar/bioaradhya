@@ -326,7 +326,6 @@ function HomePage() {
           <div className="container">
             <div className="collection-intro">
               <div><span className="eyebrow">Expertly selected</span><h2>Featured Products</h2></div>
-              <p>A considered edit of everyday remedies chosen for their quality, versatility, and place in a thoughtful wellness routine.</p>
               <button className="text-link">Discover the edit <Icon name="arrow" size={15} /></button>
             </div>
             <div className="product-grid">
@@ -339,13 +338,11 @@ function HomePage() {
           <div className="special-orb" />
           <div className="container">
             <div className="special-heading">
-              <div><span className="eyebrow">Limited-time wellness offers</span><h2>Special Products</h2><p>Exclusive combinations and customer favourites at thoughtful prices—available while stocks last.</p></div>
-              <div className="special-badge"><small>UP TO</small><strong>20%</strong><span>OFF</span></div>
+              <div><span className="eyebrow">Limited-time wellness offers</span><h2>Special Products</h2></div>
             </div>
             <div className="product-grid special-product-grid">
               {[products[1], products[3], products[4], products[6]].map((product) => <ProductCard key={`special-${product.name}`} product={product} />)}
             </div>
-            <div className="special-footnote"><Icon name="shield" size={15} /><span>Authentic products</span><i /><Icon name="truck" size={15} /><span>Fast delivery</span><i /><Icon name="leaf" size={15} /><span>Carefully packed</span></div>
           </div>
         </section>
 
@@ -907,12 +904,43 @@ function ShopPage() {
           <div className="container shop-guidance-grid"><div className="shop-guidance-image"><img src={photos.doctorTwo} alt="Bioaradhya wellness specialist" /><span><i /> Doctors available today</span></div><div><span className="eyebrow">Need help choosing?</span><h2>You don’t have to figure it out alone.</h2><p>Homeopathy is personal. Speak with a qualified practitioner who can understand your symptoms, history, and wellness goals before suggesting the right next step.</p><ul><li><Icon name="check" /> Private one-to-one consultation</li><li><Icon name="check" /> Personalised care guidance</li><li><Icon name="check" /> Thoughtful follow-up support</li></ul><a className="btn btn-lime" href="/#consult">Consult a doctor <Icon name="arrow" /></a></div></div>
         </section>
 
-        <section className="shop-categories container"><SectionTitle eyebrow="Shop your way" title="Explore by wellness need" action="View health concerns" /><div className="shop-category-cards">{[
-          ["Immunity", "Everyday support for resilience", "shield"],
-          ["Digestive Care", "Comfort and digestive balance", "leaf"],
-          ["Skin & Hair", "Care from root to radiance", "star"],
-          ["Mind & Sleep", "Calm days and restful nights", "heart"],
-        ].map(([name, copy, icon]) => <button key={name} onClick={() => { setActiveShopCategory(name); document.querySelector(".shop-catalogue")?.scrollIntoView({ behavior: "smooth" }); }}><span><Icon name={icon as IconName} /></span><strong>{name}</strong><small>{copy}</small><Icon name="arrow" /></button>)}</div></section>
+        <section className="shop-categories container">
+          <SectionTitle eyebrow="Shop your way" title="Explore by wellness need" action="View health concerns" />
+          <div className="category-grid-wrapper">
+            <div className="category-grid">
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src={immunityImg} alt="Immunity" /></div>
+                <strong>Immunity</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src={womensHealthImg} alt="Women's Health" /></div>
+                <strong>Women's Health</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src={skinHairImg} alt="Skin & Hair" /></div>
+                <strong>Skin & Hair</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src={digestionImg} alt="Digestion" /></div>
+                <strong>Digestion</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src={stressSleepImg} alt="Stress & Sleep" /></div>
+                <strong>Stress & Sleep</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+              <button className="category-card">
+                <div className="category-image-wrapper"><img src={childrensCareImg} alt="Children's Care" /></div>
+                <strong>Children's Care</strong>
+                <small>Explore care <Icon name="arrow" size={12} /></small>
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="footer">

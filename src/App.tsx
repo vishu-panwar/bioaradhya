@@ -556,50 +556,103 @@ function ContactPage() {
           </div>
 
           <div className="contact-form-card" id="contact-form">
-            <div className="form-heading">
-              <span className="eyebrow">Send us a message</span>
-              <h2>How can we support you?</h2>
-              <p>Share a few details and the right person from our team will get back to you.</p>
-            </div>
-            <form onSubmit={submitForm} className="contact-form">
-              <div className="field-row">
-                <label><span>Full name</span><input name="name" placeholder="Your full name" required /></label>
-                <label><span>Phone number</span><input name="phone" type="tel" placeholder="+91 00000 00000" required /></label>
-              </div>
-              <label><span>Email address</span><input name="email" type="email" placeholder="you@example.com" required /></label>
-              <fieldset>
-                <legend>What can we help you with?</legend>
-                <div className="topic-options">
-                  {["General enquiry", "My order", "Product guidance", "Doctor consultation"].map((item) => (
-                    <button type="button" className={topic === item ? "selected" : ""} onClick={() => setTopic(item)} key={item}>
-                      {topic === item && <Icon name="check" size={13} />}{item}
-                    </button>
-                  ))}
-                </div>
-                <input type="hidden" name="topic" value={topic} />
-              </fieldset>
-              <label><span>Your message</span><textarea name="message" placeholder="Tell us how we can help..." rows={5} required /></label>
-              <label className="consent-field"><input type="checkbox" required /><span>I agree to be contacted by the Bioaradhya care team regarding this enquiry.</span></label>
-              
-              {formStatus === 'error' && errorMessage && (
-                <div className="form-error-message" style={{ 
-                  padding: '12px 16px', 
-                  backgroundColor: '#fee', 
-                  border: '1px solid #fcc', 
-                  borderRadius: '8px', 
-                  color: '#c33', 
-                  fontSize: '14px',
-                  marginBottom: '16px'
+            {submitted ? (
+              <div className="form-success-state" style={{
+                textAlign: 'center',
+                padding: '60px 30px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '20px'
+              }}>
+                <div style={{
+                  width: '70px',
+                  height: '70px',
+                  borderRadius: '50%',
+                  backgroundColor: '#d4f4dd',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '10px'
                 }}>
-                  {errorMessage}
+                  <Icon name="check" size={35} />
                 </div>
-              )}
-              
-              <Button tone="primary" type="submit" disabled={formStatus === 'sending'}>
-                {formStatus === 'sending' ? 'Sending...' : 'Send message'} <Icon name="arrow" />
-              </Button>
-              <small className="form-footnote"><Icon name="shield" size={13} /> Your information is secure and never shared without permission.</small>
-            </form>
+                <div>
+                  <h2 style={{ fontSize: '28px', marginBottom: '12px', color: '#1a4d2e' }}>Thank you for reaching out!</h2>
+                  <p style={{ fontSize: '16px', color: '#5a7c65', lineHeight: '1.6', maxWidth: '500px', margin: '0 auto 24px' }}>
+                    We've received your message. A Bioaradhya care specialist will respond within 24 hours.
+                  </p>
+                  <p style={{ fontSize: '14px', color: '#7a9383', marginBottom: '30px' }}>
+                    Check your email for a confirmation message.
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setSubmitted(false)} 
+                  style={{
+                    padding: '12px 28px',
+                    backgroundColor: '#2a5f3f',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontSize: '15px',
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1a4d2e'}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#2a5f3f'}
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="form-heading">
+                  <span className="eyebrow">Send us a message</span>
+                  <h2>How can we support you?</h2>
+                  <p>Share a few details and the right person from our team will get back to you.</p>
+                </div>
+                <form onSubmit={submitForm} className="contact-form">
+                  <div className="field-row">
+                    <label><span>Full name</span><input name="name" placeholder="Your full name" required /></label>
+                    <label><span>Phone number</span><input name="phone" type="tel" placeholder="+91 00000 00000" required /></label>
+                  </div>
+                  <label><span>Email address</span><input name="email" type="email" placeholder="you@example.com" required /></label>
+                  <fieldset>
+                    <legend>What can we help you with?</legend>
+                    <div className="topic-options">
+                      {["General enquiry", "My order", "Product guidance", "Doctor consultation"].map((item) => (
+                        <button type="button" className={topic === item ? "selected" : ""} onClick={() => setTopic(item)} key={item}>
+                          {topic === item && <Icon name="check" size={13} />}{item}
+                        </button>
+                      ))}
+                    </div>
+                    <input type="hidden" name="topic" value={topic} />
+                  </fieldset>
+                  <label><span>Your message</span><textarea name="message" placeholder="Tell us how we can help..." rows={5} required /></label>
+                  <label className="consent-field"><input type="checkbox" required /><span>I agree to be contacted by the Bioaradhya care team regarding this enquiry.</span></label>
+                  
+                  {formStatus === 'error' && errorMessage && (
+                    <div className="form-error-message" style={{ 
+                      padding: '12px 16px', 
+                      backgroundColor: '#fee', 
+                      border: '1px solid #fcc', 
+                      borderRadius: '8px', 
+                      color: '#c33', 
+                      fontSize: '14px',
+                      marginBottom: '16px'
+                    }}>
+                      {errorMessage}
+                    </div>
+                  )}
+                  
+                  <Button tone="primary" type="submit" disabled={formStatus === 'sending'}>
+                    {formStatus === 'sending' ? 'Sending...' : 'Send message'} <Icon name="arrow" />
+                  </Button>
+                  <small className="form-footnote"><Icon name="shield" size={13} /> Your information is secure and never shared without permission.</small>
+                </form>
+              </>
+            )}
           </div>
         </section>
 

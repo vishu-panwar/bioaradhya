@@ -732,22 +732,22 @@ function AboutPage() {
                           </div>
             <div className="purpose-grid">
               <article className="purpose-card purpose-featured">
-                <div className="purpose-icon" style={{ width: '200px', height: '200px', marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage1} alt="Listen first" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
+                <div className="purpose-icon" style={{ width: '240px', height: '240px', marginBottom: '30px', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage1} alt="Listen first" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Listen first</h3><p>Good care starts with understanding the person, not simply naming the symptom.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <div className="purpose-icon" style={{ width: '200px', height: '200px', marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage2} alt="Never compromise" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
+                <div className="purpose-icon" style={{ width: '240px', height: '240px', marginBottom: '30px', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage2} alt="Never compromise" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Never compromise</h3><p>From sourcing to service, we hold ourselves to exacting standards of honesty and quality.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <div className="purpose-icon" style={{ width: '200px', height: '200px', marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage3} alt="Heal gently" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
+                <div className="purpose-icon" style={{ width: '240px', height: '240px', marginBottom: '30px', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage3} alt="Heal gently" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Heal gently</h3><p>We believe wellness can be effective without feeling overwhelming, impersonal, or rushed.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <div className="purpose-icon" style={{ width: '200px', height: '200px', marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage4} alt="Stay beside you" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
+                <div className="purpose-icon" style={{ width: '240px', height: '240px', marginBottom: '30px', marginLeft: 'auto', marginRight: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={purposeImage4} alt="Stay beside you" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Stay beside you</h3><p>Our relationship does not end at checkout. We support your journey as it evolves.</p>
                 <div className="purpose-line" />
               </article>

@@ -1,4 +1,5 @@
 ﻿import { FormEvent, ReactNode, useEffect, useMemo, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 // Images from public folder - these paths work in both dev and production
 const heroMascot = '/cheerful-leafy-medicine-bottle-mascot.png';
@@ -412,11 +413,90 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [topic, setTopic] = useState("General enquiry");
   const [openFaq, setOpenFaq] = useState(0);
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const submitForm = (event: FormEvent<HTMLFormElement>) => {
+  // EmailJS configuration - Replace these with your actual values
+  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+  const EMAILJS_OWNER_TEMPLATE_ID = 'YOUR_OWNER_TEMPLATE_ID';
+  const EMAILJS_CUSTOMER_TEMPLATE_ID = 'YOUR_CUSTOMER_TEMPLATE_ID';
+  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+  const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setFormStatus('sending');
+    setErrorMessage('');
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    
+    // Get form values
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const message = formData.get('message') as string;
+    
+    // Format current date and time
+    const now = new Date();
+    const date = now.toLocaleDateString('en-IN', { 
+      day: '2-digit', 
+      month: 'long', 
+      year: 'numeric' 
+    });
+    const time = now.toLocaleTimeString('en-IN', { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: true 
+    });
+    const year = now.getFullYear();
+
+    // Template parameters for both emails
+    const templateParams = {
+      name,
+      email,
+      phone,
+      topic,
+      message,
+      date: `${date} at ${time}`,
+      year: year.toString()
+    };
+
+    try {
+      // Initialize EmailJS (only needed once, but safe to call multiple times)
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      // Send email to owner
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_OWNER_TEMPLATE_ID,
+        {
+          ...templateParams,
+          to_email: 'contact@bioaradhya.com'
+        }
+      );
+
+      // Send confirmation email to customer
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_CUSTOMER_TEMPLATE_ID,
+        {
+          ...templateParams,
+          to_email: email
+        }
+      );
+
+      // Success - both emails sent
+      setFormStatus('success');
+      setSubmitted(true);
+      form.reset();
+      setTopic("General enquiry");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setFormStatus('error');
+      setErrorMessage('Failed to send message. Please try again or contact us directly at contact@bioaradhya.com');
+    }
   };
 
   return (
@@ -500,7 +580,24 @@ function ContactPage() {
               </fieldset>
               <label><span>Your message</span><textarea name="message" placeholder="Tell us how we can help..." rows={5} required /></label>
               <label className="consent-field"><input type="checkbox" required /><span>I agree to be contacted by the Bioaradhya care team regarding this enquiry.</span></label>
-              <Button tone="primary" type="submit">Send message <Icon name="arrow" /></Button>
+              
+              {formStatus === 'error' && errorMessage && (
+                <div className="form-error-message" style={{ 
+                  padding: '12px 16px', 
+                  backgroundColor: '#fee', 
+                  border: '1px solid #fcc', 
+                  borderRadius: '8px', 
+                  color: '#c33', 
+                  fontSize: '14px',
+                  marginBottom: '16px'
+                }}>
+                  {errorMessage}
+                </div>
+              )}
+              
+              <Button tone="primary" type="submit" disabled={formStatus === 'sending'}>
+                {formStatus === 'sending' ? 'Sending...' : 'Send message'} <Icon name="arrow" />
+              </Button>
               <small className="form-footnote"><Icon name="shield" size={13} /> Your information is secure and never shared without permission.</small>
             </form>
           </div>

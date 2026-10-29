@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useEffect, useMemo, useState } from "react";
+﻿import { FormEvent, ReactNode, useEffect, useMemo, useState } from "react";
 
 // Images from public folder - these paths work in both dev and production
 const heroMascot = '/cheerful-leafy-medicine-bottle-mascot.png';
@@ -601,8 +601,7 @@ function AboutPage() {
           <div className="container">
             <div className="purpose-heading">
               <div><span className="eyebrow">Why we exist</span><h2>Modern care. Timeless principles.</h2></div>
-              <p>We pair the individualised philosophy of homeopathy with the clarity, convenience, and quality standards today’s families deserve.</p>
-            </div>
+                          </div>
             <div className="purpose-grid">
               <article className="purpose-card purpose-featured">
                 <div className="purpose-icon" style={{ width: '180px', height: '180px', marginBottom: '20px' }}><img src={purposeImage1} alt="Listen first" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
@@ -615,12 +614,12 @@ function AboutPage() {
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <div className="purpose-icon" style={{ width: '180px', height: '180px', marginBottom: '20px' }}><img src={purposeImage3} alt="Heal gently" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
+                <div className="purpose-icon" style={{ width: '150px', height: '150px', marginBottom: '20px' }}><img src={purposeImage3} alt="Heal gently" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Heal gently</h3><p>We believe wellness can be effective without feeling overwhelming, impersonal, or rushed.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <div className="purpose-icon" style={{ width: '180px', height: '180px', marginBottom: '20px' }}><img src={purposeImage4} alt="Stay beside you" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
+                <div className="purpose-icon" style={{ width: '150px', height: '150px', marginBottom: '20px' }}><img src={purposeImage4} alt="Stay beside you" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Stay beside you</h3><p>Our relationship does not end at checkout. We support your journey as it evolves.</p>
                 <div className="purpose-line" />
               </article>

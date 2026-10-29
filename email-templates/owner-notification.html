@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Form Submission - Bioaradhya</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f7f8f3;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="padding: 40px 20px;">
+                <table role="presentation" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(3, 68, 55, 0.08);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #075f4d 0%, #034437 100%); padding: 32px; text-align: center;">
+                            <h1 style="margin: 0; color: #d9f53b; font-size: 24px; font-weight: 700; letter-spacing: -0.02em;">
+                                🔔 New Contact Form Submission
+                            </h1>
+                            <p style="margin: 8px 0 0; color: #c9ddd7; font-size: 14px;">
+                                Someone has reached out to Bioaradhya
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 32px;">
+                            
+                            <!-- Customer Details -->
+                            <div style="background-color: #e7f2ee; border-left: 4px solid #075f4d; padding: 20px; border-radius: 8px; margin-bottom: 24px;">
+                                <h2 style="margin: 0 0 16px; color: #075f4d; font-size: 16px; font-weight: 700;">
+                                    Customer Details
+                                </h2>
+                                
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="padding: 8px 0; color: #66736f; font-size: 13px; font-weight: 600;">
+                                            Name:
+                                        </td>
+                                        <td style="padding: 8px 0; color: #10241f; font-size: 14px; font-weight: 500;">
+                                            {{name}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; color: #66736f; font-size: 13px; font-weight: 600;">
+                                            Email:
+                                        </td>
+                                        <td style="padding: 8px 0;">
+                                            <a href="mailto:{{email}}" style="color: #075f4d; text-decoration: none; font-size: 14px; font-weight: 500;">
+                                                {{email}}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; color: #66736f; font-size: 13px; font-weight: 600;">
+                                            Phone:
+                                        </td>
+                                        <td style="padding: 8px 0;">
+                                            <a href="tel:{{phone}}" style="color: #075f4d; text-decoration: none; font-size: 14px; font-weight: 500;">
+                                                {{phone}}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; color: #66736f; font-size: 13px; font-weight: 600;">
+                                            Topic:
+                                        </td>
+                                        <td style="padding: 8px 0;">
+                                            <span style="background-color: #d9f53b; color: #034437; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">
+                                                {{topic}}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Message -->
+                            <div style="margin-bottom: 24px;">
+                                <h3 style="margin: 0 0 12px; color: #075f4d; font-size: 15px; font-weight: 700;">
+                                    Message:
+                                </h3>
+                                <div style="background-color: #f7f8f3; border: 1px solid #dce5e0; border-radius: 8px; padding: 16px;">
+                                    <p style="margin: 0; color: #10241f; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">{{message}}</p>
+                                </div>
+                            </div>
+
+                            <!-- Action Button -->
+                            <div style="text-align: center; margin-top: 28px;">
+                                <a href="mailto:{{email}}?subject=Re: Your enquiry to Bioaradhya" 
+                                   style="display: inline-block; background-color: #075f4d; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 25px; font-size: 14px; font-weight: 700;">
+                                    Reply to Customer →
+                                </a>
+                            </div>
+
+                            <!-- Timestamp -->
+                            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #dce5e0; text-align: center;">
+                                <p style="margin: 0; color: #86908d; font-size: 12px;">
+                                    Received on {{date}} at {{time}}
+                                </p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #f7f8f3; padding: 24px; text-align: center; border-top: 1px solid #dce5e0;">
+                            <p style="margin: 0 0 8px; color: #66736f; font-size: 12px;">
+                                This is an automated notification from your website contact form
+                            </p>
+                            <p style="margin: 0; color: #86908d; font-size: 11px;">
+                                Bioaradhya Private Limited · Modern homeopathy rooted in thoughtful care
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

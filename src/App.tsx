@@ -4,6 +4,7 @@ import { FormEvent, ReactNode, useEffect, useMemo, useState } from "react";
 const heroMascot = '/cheerful-leafy-medicine-bottle-mascot.png';
 const contactTeam = '/leafy-care-team-online.png';
 const faqMascot = '/cheerful-herbal-health-mascot.png';
+const aboutHeroMascot = '/Cheerful Medicine Bottle and Heart Mascots.png';
 const immunityImg = '/immunity.png';
 const womensHealthImg = '/womens-health.png';
 const skinHairImg = '/skin-and-hair.png';
@@ -571,12 +572,9 @@ function AboutPage() {
               <a className="btn btn-lime" href="#story">Discover our journey <Icon name="arrow" /></a>
             </div>
             <div className="about-hero-collage">
-              <div className="collage-main"><img src={photos.consult} alt="Personal guidance at Bioaradhya Homeopathy" /></div>
-              <div className="collage-small"><img src={photos.bottles[0]} alt="Authentic homeopathic remedies" /></div>
-              <div className="about-year"><span>EST.</span><strong>2021</strong><small>New Delhi, India</small></div>
+              <div className="collage-main"><img src={aboutHeroMascot} alt="Bioaradhya Care Mascots" /></div>
             </div>
           </div>
-          <div className="about-manifesto container"><span>Gentle by nature</span><i /><span>Honest in every detail</span><i /><span>Personal at every step</span></div>
         </section>
 
         <section className="about-story container" id="story">

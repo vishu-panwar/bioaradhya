@@ -465,32 +465,18 @@ function ContactPage() {
       // Initialize EmailJS (only needed once, but safe to call multiple times)
       emailjs.init(EMAILJS_PUBLIC_KEY);
 
-      // Send email to owner
+      // Send email to owner (customer auto-reply will be sent automatically by EmailJS template)
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_OWNER_TEMPLATE_ID,
-        {
-          ...templateParams,
-          to_email: 'contact@bioaradhya.com'
-        }
+        templateParams
       );
 
-      // Send confirmation email to customer
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_CUSTOMER_TEMPLATE_ID,
-        {
-          ...templateParams,
-          to_email: email
-        }
-      );
-
-      // Success - both emails sent
+      // Success
       setFormStatus('success');
       setSubmitted(true);
       form.reset();
       setTopic("General enquiry");
-      window.scrollTo({ top: 0, behavior: "smooth" });
 
     } catch (error) {
       console.error('EmailJS Error:', error);

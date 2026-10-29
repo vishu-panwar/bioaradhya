@@ -416,11 +416,11 @@ function ContactPage() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // EmailJS configuration - Replace these with your actual values
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-  const EMAILJS_OWNER_TEMPLATE_ID = 'YOUR_OWNER_TEMPLATE_ID';
-  const EMAILJS_CUSTOMER_TEMPLATE_ID = 'YOUR_CUSTOMER_TEMPLATE_ID';
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+  // EmailJS configuration
+  const EMAILJS_SERVICE_ID = 'service_dugks15';
+  const EMAILJS_OWNER_TEMPLATE_ID = 'template_3v2we0h'; // Contact Us template
+  const EMAILJS_CUSTOMER_TEMPLATE_ID = 'template_vdf287t'; // Auto-Reply template
+  const EMAILJS_PUBLIC_KEY = 'TQM_0miz4pow8QKHE';
 
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

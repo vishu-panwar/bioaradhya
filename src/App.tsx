@@ -164,7 +164,7 @@ function Header({ showSearch = false, query, setQuery }: { showSearch?: boolean;
           <a href="#/contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
         <div className="nav-actions">
-          <Button tone="lime" onClick={() => document.querySelector("#consult")?.scrollIntoView({ behavior: "smooth" })}>Book consultation</Button>
+          <Button tone="lime" onClick={() => window.location.hash = '#/contact'}>Book consultation</Button>
           <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu"><Icon name={menuOpen ? "close" : "menu"} /></button>
         </div>
       </div>
@@ -371,7 +371,7 @@ function HomePage() {
           <article className="doctor-card">
             <div className="doctor-card-copy"><span className="eyebrow">Expert guidance</span><h2>Connect with a homeopathy doctor.</h2><p>Get a private, personalised consultation from the comfort of your home.</p>
               <ul><li><Icon name="check" size={15} /> Qualified practitioners</li><li><Icon name="check" size={15} /> Secure video consultation</li><li><Icon name="check" size={15} /> Thoughtful follow-up care</li></ul>
-              <Button tone="lime">Book consultation <Icon name="arrow" /></Button>
+              <Button tone="lime" onClick={() => window.location.hash = '#/contact'}>Book consultation <Icon name="arrow" /></Button>
             </div>
             <img src="/doctor-mascot.png" alt="Bioaradhya homeopathy specialist" />
           </article>

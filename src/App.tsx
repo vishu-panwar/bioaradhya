@@ -519,14 +519,6 @@ function ContactPage() {
           </div>
         </section>
 
-        {submitted && (
-          <section className="success-banner container">
-            <span><Icon name="check" size={25} /></span>
-            <div><strong>Thank you for reaching out.</strong><p>We’ve received your message. A Bioaradhya care specialist will respond within 24 hours.</p></div>
-            <button onClick={() => setSubmitted(false)} aria-label="Close message"><Icon name="close" /></button>
-          </section>
-        )}
-
         <section className="contact-main container">
           <div className="contact-details">
             <span className="eyebrow">Choose what works for you</span>
@@ -1127,4 +1119,3 @@ function App() {
 }
 
 export default App;
-

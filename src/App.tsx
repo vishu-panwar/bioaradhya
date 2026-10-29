@@ -5,6 +5,10 @@ const heroMascot = '/cheerful-leafy-medicine-bottle-mascot.png';
 const contactTeam = '/leafy-care-team-online.png';
 const faqMascot = '/cheerful-herbal-health-mascot.png';
 const aboutHeroMascot = '/Cheerful Medicine Bottle and Heart Mascots.png';
+const purposeImage1 = '/image 1.png';
+const purposeImage2 = '/image 2.png';
+const purposeImage3 = '/image 3.png';
+const purposeImage4 = '/image 4.png';
 const immunityImg = '/immunity.png';
 const womensHealthImg = '/womens-health.png';
 const skinHairImg = '/skin-and-hair.png';
@@ -601,22 +605,26 @@ function AboutPage() {
             </div>
             <div className="purpose-grid">
               <article className="purpose-card purpose-featured">
-                <span className="purpose-number">01</span><div className="purpose-icon"><Icon name="heart" /></div>
+                <span className="purpose-number">01</span>
+                <div className="purpose-icon"><img src={purposeImage1} alt="Listen first" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Listen first</h3><p>Good care starts with understanding the person, not simply naming the symptom.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <span className="purpose-number">02</span><div className="purpose-icon"><Icon name="shield" /></div>
+                <span className="purpose-number">02</span>
+                <div className="purpose-icon"><img src={purposeImage2} alt="Never compromise" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Never compromise</h3><p>From sourcing to service, we hold ourselves to exacting standards of honesty and quality.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <span className="purpose-number">03</span><div className="purpose-icon"><Icon name="leaf" /></div>
+                <span className="purpose-number">03</span>
+                <div className="purpose-icon"><img src={purposeImage3} alt="Heal gently" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Heal gently</h3><p>We believe wellness can be effective without feeling overwhelming, impersonal, or rushed.</p>
                 <div className="purpose-line" />
               </article>
               <article className="purpose-card">
-                <span className="purpose-number">04</span><div className="purpose-icon"><Icon name="user" /></div>
+                <span className="purpose-number">04</span>
+                <div className="purpose-icon"><img src={purposeImage4} alt="Stay beside you" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /></div>
                 <h3>Stay beside you</h3><p>Our relationship does not end at checkout. We support your journey as it evolves.</p>
                 <div className="purpose-line" />
               </article>

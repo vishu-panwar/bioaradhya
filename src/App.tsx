@@ -18,6 +18,7 @@ const stressSleepImg = '/stress-and-sleep.png';
 const childrensCareImg = '/childrens-care.png';
 const asthamaxImg = '/asthamax-drops.png';
 const asthamaxMascotImg = '/asthamax-mascot.png';
+const immunityDropsImg = '/Bioaradhya Immunity Drops Packaging.png';
 
 type IconName =
   | "search"
@@ -78,8 +79,8 @@ const photos = {
 
 const products = [
   { name: "Asthamax Drops", use: "For respiratory problems", price: "₹165", old: "₹190", image: asthamaxImg, tag: "Save 13%" },
-  { name: "Bio Combination No. 28", use: "Everyday vitality tablets", price: "₹210", old: "₹245", image: photos.bottles[1], tag: "Bestseller" },
-  { name: "Nux Vomica 30C", use: "Digestive wellness drops", price: "₹175", old: "₹205", image: photos.bottles[2], tag: "Save 15%" },
+  { name: "Bio Combination No. 28", use: "Everyday vitality tablets", price: "₹210", old: "₹245", image: immunityDropsImg, tag: "Bestseller" },
+  { name: "Nux Vomica 30C", use: "Digestive wellness drops", price: "₹175", old: "₹205", image: immunityDropsImg, tag: "Save 15%" },
   { name: "Hair & Scalp Wellness", use: "Nourishing homeopathic blend", price: "₹349", old: "₹399", image: photos.bottles[3], tag: "Popular" },
   { name: "Calendula Mother Tincture", use: "Skin soothing care", price: "₹225", old: "₹260", image: photos.bottles[4], tag: "Save 14%" },
   { name: "SBL Liv-T Support", use: "Daily liver wellness", price: "₹289", old: "₹340", image: photos.bottles[5], tag: "Save 15%" },
@@ -206,23 +207,10 @@ function productUrl(name: string) {
 }
 
 function ProductCard({ product }: { product: typeof products[number] }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Use same 2 images for all products (Asthamax box and mascot)
-  const productImages = [asthamaxImg, asthamaxMascotImg];
-  
-  // Auto-rotate images every 2 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-  
   return (
     <article className="product-card">
       <span className="product-tag">{product.tag}</span>
-      <div className="product-image-wrap"><img src={productImages[currentImageIndex]} alt={product.name} /></div>
+      <div className="product-image-wrap"><img src={product.image} alt={product.name} /></div>
       <h3>{product.name}</h3>
       <p>{product.use}</p>
       <div className="price-row"><strong>{product.price}</strong><del>{product.old}</del></div>

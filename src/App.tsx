@@ -77,36 +77,49 @@ const photos = {
   ],
 };
 
-const products = [
-  { name: "Asthamax Drops", use: "For respiratory problems", price: "₹165", old: "₹190", image: asthamaxImg, tag: "Save 13%" },
-  { name: "Bio Combination No. 28", use: "Everyday vitality tablets", price: "₹210", old: "₹245", image: immunityDropsImg, tag: "Bestseller" },
-  { name: "Nux Vomica 30C", use: "Digestive wellness drops", price: "₹175", old: "₹205", image: immunityDropsImg, tag: "Save 15%" },
-  { name: "Hair & Scalp Wellness", use: "Nourishing homeopathic blend", price: "₹349", old: "₹399", image: photos.bottles[3], tag: "Popular" },
-  { name: "Calendula Mother Tincture", use: "Skin soothing care", price: "₹225", old: "₹260", image: photos.bottles[4], tag: "Save 14%" },
-  { name: "SBL Liv-T Support", use: "Daily liver wellness", price: "₹289", old: "₹340", image: photos.bottles[5], tag: "Save 15%" },
-  { name: "Stress & Sleep Drops", use: "Calm nights, brighter days", price: "₹320", old: "₹375", image: photos.bottles[6], tag: "Top rated" },
-  { name: "Immune Care Combo", use: "Seasonal wellness support", price: "₹499", old: "₹590", image: photos.bottles[7], tag: "Save 16%" },
-];
+// ============================================================
+// PRODUCT CATALOG — Add or edit products here
+// ============================================================
+// To add a new product:
+//   1. Copy one of the objects below
+//   2. Paste it at the end of the PRODUCT_CATALOG array (before the closing ])
+//   3. Fill in all fields — required fields are marked [REQUIRED]
+//   4. Add the product image to the /public folder and reference it as '/your-image.png'
+//   5. Save — the product will appear on the Home, Shop, and detail pages automatically
+// ============================================================
 
-const productCategories: Record<string, string> = {
-  "Asthamax Drops": "Respiratory Care",
-  "Bio Combination No. 28": "Everyday Wellness",
-  "Nux Vomica 30C": "Digestive Care",
-  "Hair & Scalp Wellness": "Skin & Hair",
-  "Calendula Mother Tincture": "Skin & Hair",
-  "SBL Liv-T Support": "Digestive Care",
-  "Stress & Sleep Drops": "Mind & Sleep",
-  "Immune Care Combo": "Immunity",
-};
+interface ProductData {
+  // [REQUIRED] Shown on cards and detail pages
+  name: string;
+  use: string;           // Short tagline, e.g. "For respiratory problems"
+  price: string;         // e.g. "₹165"
+  oldPrice: string;      // Original price shown with strikethrough
+  category: string;      // Must match one of the shopCategories for filtering to work
+  tag: string;           // Badge on card, e.g. "Bestseller", "Save 15%"
 
-const productDetails: Record<string, {
-  composition: string[];
-  presentation: string;
-  dosage: string;
-  overview?: string;
-  benefits?: string[];
-}> = {
-  "Asthamax Drops": {
+  // [REQUIRED] Images
+  image: string;         // Main product image path from /public, e.g. '/my-product.png'
+  gallery: string[];     // Array of gallery image paths. First entry should be the main image.
+
+  // [REQUIRED] Detail page content
+  composition: string[];  // List of ingredients
+  presentation: string;   // Pack size, e.g. "30ML pack"
+  dosage: string;         // Dosage instructions
+  overview: string;       // 2-3 sentence paragraph about the product
+  benefits: string[];     // List of 4-6 benefit bullet points
+}
+
+const PRODUCT_CATALOG: ProductData[] = [
+  // ─── PRODUCT 1 ───────────────────────────────────────────
+  {
+    name: "Asthamax Drops",
+    use: "For respiratory problems",
+    price: "₹165",
+    oldPrice: "₹190",
+    category: "Respiratory Care",
+    tag: "Save 13%",
+    image: asthamaxImg,
+    gallery: [asthamaxImg, asthamaxMascotImg],
     composition: [
       "Aspidosperma 3x",
       "Blatta Orientalis Q",
@@ -114,19 +127,229 @@ const productDetails: Record<string, {
       "Ipecacuanha 3x",
       "Lobelia Inflata 3x",
       "Senega 3x",
-      "Yerba Santa Q"
+      "Yerba Santa Q",
     ],
     presentation: "30ML pack",
     dosage: "20 drops 4 times daily or as directed by the physician",
-    overview: "Asthamax Drops is a carefully formulated homeopathic preparation designed to support respiratory wellness. This blend combines traditional homeopathic ingredients known for their role in addressing respiratory concerns, making it a trusted companion for those seeking natural support for breathing comfort.",
+    overview:
+      "Asthamax Drops is a carefully formulated homeopathic preparation designed to support respiratory wellness. This blend combines traditional homeopathic ingredients known for their role in addressing respiratory concerns, making it a trusted companion for those seeking natural support for breathing comfort.",
     benefits: [
       "Supports healthy respiratory function",
       "May help ease breathing discomfort",
       "Complements a holistic respiratory care routine",
-      "Gentle formulation suitable for regular use under guidance"
-    ]
-  }
-};
+      "Gentle formulation suitable for regular use under guidance",
+    ],
+  },
+
+  // ─── PRODUCT 2 ───────────────────────────────────────────
+  {
+    name: "Bio Combination No. 28",
+    use: "Everyday vitality tablets",
+    price: "₹210",
+    oldPrice: "₹245",
+    category: "Everyday Wellness",
+    tag: "Bestseller",
+    image: immunityDropsImg,
+    gallery: [immunityDropsImg, photos.bottles[1]],
+    composition: [
+      "Calcarea Phosphorica 3x",
+      "Ferrum Phosphoricum 3x",
+      "Kali Phosphoricum 3x",
+      "Magnesia Phosphorica 3x",
+      "Natrum Phosphoricum 3x",
+    ],
+    presentation: "25g tablet pack",
+    dosage: "4 tablets 3 times daily or as directed by the physician",
+    overview:
+      "Bio Combination No. 28 is a classic biochemic formulation combining five phosphate tissue salts. Traditionally used to support general vitality, energy metabolism, and the body's natural restorative processes, it is a gentle everyday supplement suitable for adults and children alike.",
+    benefits: [
+      "Supports general vitality and daily energy levels",
+      "Aids the body's natural restorative processes",
+      "Gentle biochemic formula suitable for all ages under guidance",
+      "Complements a balanced diet and wellness routine",
+      "No known side effects when used as directed",
+    ],
+  },
+
+  // ─── PRODUCT 3 ───────────────────────────────────────────
+  {
+    name: "Nux Vomica 30C",
+    use: "Digestive wellness drops",
+    price: "₹175",
+    oldPrice: "₹205",
+    category: "Digestive Care",
+    tag: "Save 15%",
+    image: immunityDropsImg,
+    gallery: [immunityDropsImg, photos.bottles[2]],
+    composition: [
+      "Nux Vomica 30C (Poison nut — diluted)",
+    ],
+    presentation: "30ML drops",
+    dosage: "10–15 drops in water 3 times daily or as directed by the physician",
+    overview:
+      "Nux Vomica 30C is one of homeopathy's most widely used constitutional remedies. It is classically indicated for digestive discomfort arising from irregular diet, sedentary habits, or excessive stimulants. Its gentle action makes it a valuable first-line support for a range of everyday digestive complaints.",
+    benefits: [
+      "May support relief from indigestion and acidity",
+      "Useful after dietary indiscretion or overindulgence",
+      "Traditionally indicated for nausea and stomach unease",
+      "Supports healthy liver and digestive organ function",
+      "Gentle and safe when used under professional guidance",
+    ],
+  },
+
+  // ─── PRODUCT 4 ───────────────────────────────────────────
+  {
+    name: "Hair & Scalp Wellness",
+    use: "Nourishing homeopathic blend",
+    price: "₹349",
+    oldPrice: "₹399",
+    category: "Skin & Hair",
+    tag: "Popular",
+    image: photos.bottles[3],
+    gallery: [photos.bottles[3], photos.bottles[0]],
+    composition: [
+      "Acidum Phosphoricum 3x",
+      "Arnica Montana Q",
+      "Lycopodium Clavatum 3x",
+      "Natrum Muriaticum 3x",
+      "Wiesbaden Q",
+    ],
+    presentation: "30ML drops",
+    dosage: "15 drops twice daily in water or as directed by the physician",
+    overview:
+      "Hair & Scalp Wellness is a homeopathic blend specifically designed to address common concerns related to hair thinning, scalp health, and hair vitality. Formulated with traditional homeopathic ingredients, it nourishes from within, supporting stronger, healthier hair over time with consistent use.",
+    benefits: [
+      "Helps address hair thinning and excessive hair fall",
+      "Nourishes the scalp and strengthens hair roots",
+      "Supports healthy hair growth cycles",
+      "Useful for dryness, dandruff, and scalp irritation",
+      "Gentle formula for long-term use under guidance",
+    ],
+  },
+
+  // ─── PRODUCT 5 ───────────────────────────────────────────
+  {
+    name: "Calendula Mother Tincture",
+    use: "Skin soothing care",
+    price: "₹225",
+    oldPrice: "₹260",
+    category: "Skin & Hair",
+    tag: "Save 14%",
+    image: photos.bottles[4],
+    gallery: [photos.bottles[4], photos.bottles[5]],
+    composition: [
+      "Calendula Officinalis Q (Mother Tincture)",
+    ],
+    presentation: "30ML mother tincture",
+    dosage: "10 drops in water twice daily or apply diluted externally as directed by the physician",
+    overview:
+      "Calendula Mother Tincture (Calendula Officinalis Q) is derived from marigold flowers and is one of the most trusted topical and internal remedies in homeopathy. Renowned for its soothing and healing properties, it is widely used to support healthy skin, minor wounds, and inflammatory skin concerns.",
+    benefits: [
+      "Soothes minor skin irritations, rashes, and redness",
+      "Supports natural wound healing and tissue repair",
+      "Useful for dry or sensitive skin conditions",
+      "Anti-inflammatory properties for skin wellness",
+      "Can be used both internally and topically under guidance",
+    ],
+  },
+
+  // ─── PRODUCT 6 ───────────────────────────────────────────
+  {
+    name: "SBL Liv-T Support",
+    use: "Daily liver wellness",
+    price: "₹289",
+    oldPrice: "₹340",
+    category: "Digestive Care",
+    tag: "Save 15%",
+    image: photos.bottles[5],
+    gallery: [photos.bottles[5], photos.bottles[6]],
+    composition: [
+      "Andrographis Paniculata Q",
+      "Berberis Vulgaris Q",
+      "Carduus Marianus Q",
+      "Chelidonium Majus 3x",
+      "Lycopodium Clavatum 3x",
+    ],
+    presentation: "100ML syrup",
+    dosage: "2 teaspoons (10ml) twice daily with water before meals or as directed by the physician",
+    overview:
+      "SBL Liv-T Support is a comprehensive homeopathic liver tonic combining herbs traditionally used in hepatic care. It supports the liver's natural detoxification processes, aids in improving digestion, and helps maintain healthy liver function for day-to-day wellness.",
+    benefits: [
+      "Supports healthy liver function and detoxification",
+      "Aids in management of appetite and sluggish digestion",
+      "May help with symptoms of liver congestion and fatty liver",
+      "Gentle tonic suitable for regular preventive use",
+      "Supports overall digestive health and wellbeing",
+    ],
+  },
+
+  // ─── PRODUCT 7 ───────────────────────────────────────────
+  {
+    name: "Stress & Sleep Drops",
+    use: "Calm nights, brighter days",
+    price: "₹320",
+    oldPrice: "₹375",
+    category: "Mind & Sleep",
+    tag: "Top rated",
+    image: photos.bottles[6],
+    gallery: [photos.bottles[6], photos.bottles[7]],
+    composition: [
+      "Avena Sativa Q",
+      "Coffea Cruda 30",
+      "Ignatia Amara 30",
+      "Kali Phosphoricum 3x",
+      "Passiflora Incarnata Q",
+    ],
+    presentation: "30ML drops",
+    dosage: "15 drops in water 3 times daily, with an extra dose at bedtime, or as directed by the physician",
+    overview:
+      "Stress & Sleep Drops is a thoughtfully blended homeopathic preparation combining calming botanical extracts with classical remedies for emotional balance and restful sleep. Ideal for those experiencing stress-related sleeplessness, restlessness, or mild anxiety, it works gently without the risk of dependency.",
+    benefits: [
+      "Supports relaxation and reduces stress-related tension",
+      "May help ease difficulty falling or staying asleep",
+      "Gentle non-habit-forming formula",
+      "Addresses irritability and emotional imbalance",
+      "Suitable for adults experiencing lifestyle-related stress",
+    ],
+  },
+
+  // ─── PRODUCT 8 ───────────────────────────────────────────
+  {
+    name: "Immune Care Combo",
+    use: "Seasonal wellness support",
+    price: "₹499",
+    oldPrice: "₹590",
+    category: "Immunity",
+    tag: "Save 16%",
+    image: photos.bottles[7],
+    gallery: [photos.bottles[7], photos.bottles[0]],
+    composition: [
+      "Echinacea Q",
+      "Influenzinum 200",
+      "Justicia Adhatoda Q",
+      "Ocimum Sanctum Q",
+      "Thuja Occidentalis 30",
+    ],
+    presentation: "Combo pack (2 x 30ML)",
+    dosage: "15 drops of each preparation in water twice daily or as directed by the physician",
+    overview:
+      "Immune Care Combo is a curated two-bottle system designed to support the body's natural defences through seasonal changes and periods of increased susceptibility. Combining immunostimulant botanicals with classical homeopathic remedies, it provides comprehensive support for adults and children above 12 years.",
+    benefits: [
+      "Strengthens the body's natural immune defences",
+      "Supports recovery during seasonal illness",
+      "Reduces susceptibility to recurrent infections",
+      "Combines preventive and supportive homeopathic action",
+      "Suitable for adults and children above 12 years under guidance",
+    ],
+  },
+];
+
+// Backward-compatible alias so existing components work without changes
+const products = PRODUCT_CATALOG;
+
+const productCategories: Record<string, string> = Object.fromEntries(
+  PRODUCT_CATALOG.map((p) => [p.name, p.category])
+);
 
 const categories = [
   ["Immunity", "leaf"],
@@ -213,7 +436,7 @@ function ProductCard({ product }: { product: typeof products[number] }) {
       <div className="product-image-wrap"><img src={product.image} alt={product.name} /></div>
       <h3>{product.name}</h3>
       <p>{product.use}</p>
-      <div className="price-row"><strong>{product.price}</strong><del>{product.old}</del></div>
+      <div className="price-row"><strong>{product.price}</strong><del>{product.oldPrice}</del></div>
       <Button onClick={() => { window.location.href = productUrl(product.name); }}>View details <Icon name="arrow" size={15} /></Button>
     </article>
   );
@@ -896,8 +1119,8 @@ function ProductDetailsPage() {
   const requestedName = new URLSearchParams(window.location.search).get("item");
   const product = products.find((item) => item.name === requestedName) ?? products[0];
   const productIndex = products.indexOf(product);
-  const customDetails = productDetails[product.name];
-  const gallery = customDetails ? [product.image, asthamaxMascotImg] : [product.image, photos.bottles[(productIndex + 2) % photos.bottles.length], photos.bottles[(productIndex + 4) % photos.bottles.length], photos.bottles[(productIndex + 6) % photos.bottles.length]];
+  // All products now have full detail data in PRODUCT_CATALOG
+  const gallery = product.gallery;
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const [activeTab, setActiveTab] = useState("Overview");
   const [openProductFaq, setOpenProductFaq] = useState(0);
@@ -925,7 +1148,7 @@ function ProductDetailsPage() {
             <div className="detail-rating"><span>★★★★★</span><strong>4.8</strong><a href="#reviews">128 verified reviews</a></div>
             <h1>{product.name}</h1>
             <p className="product-subtitle">{product.use}</p>
-            <div className="detail-price"><strong>{product.price}</strong><del>{product.old}</del><span>Inclusive of all taxes</span></div>
+            <div className="detail-price"><strong>{product.price}</strong><del>{product.oldPrice}</del><span>Inclusive of all taxes</span></div>
             <div className="detail-divider" />
             <div className="product-highlights">
               <div><span><Icon name="leaf" /></span><strong>Gentle formulation</strong><small>Thoughtfully selected for everyday wellness</small></div>
@@ -933,7 +1156,7 @@ function ProductDetailsPage() {
               <div><span><Icon name="user" /></span><strong>Expert guidance</strong><small>Doctor support whenever you need it</small></div>
             </div>
             <div className="product-options">
-              <span>Available size</span><div><button className="active">{customDetails?.presentation || "30 ml"}</button></div>
+              <span>Available size</span><div><button className="active">{product.presentation}</button></div>
             </div>
             <div className="product-guidance-box">
               <div><Icon name="user" size={22} /><span><strong>Not sure if this is right for you?</strong><small>Speak with a qualified practitioner for personal guidance.</small></span></div>
@@ -947,10 +1170,10 @@ function ProductDetailsPage() {
           <div className="container">
             <div className="info-tabs">{["Overview", "Benefits", "How to use", "Ingredients & safety"].map((tab) => <button className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)} key={tab}>{tab}</button>)}</div>
             <div className="info-panel">
-              {activeTab === "Overview" && <><div><span className="eyebrow">Product overview</span><h2>Everyday wellness, thoughtfully supported.</h2><p>{customDetails?.overview || `${product.name} is a carefully sourced homeopathic preparation selected to support ${product.use.toLowerCase()}. Its gentle format makes it a considered addition to a practitioner-guided wellness routine.`}</p><p>Homeopathy is highly individualised. For meaningful guidance, a practitioner considers not only the primary concern but also personal patterns, triggers, routines, and overall wellbeing.</p></div><div className="info-stat-grid"><span><strong>{customDetails?.presentation || "30 ml"}</strong><small>Net quantity</small></span><span><strong>GMP</strong><small>Quality standard</small></span><span><strong>36 mo</strong><small>Shelf life</small></span><span><strong>India</strong><small>Country of origin</small></span></div></>}
-              {activeTab === "Benefits" && <><div><span className="eyebrow">Potential benefits</span><h2>Designed to complement whole-person care.</h2><p>When selected appropriately by a qualified professional, this remedy may support the following areas as part of an individualised care plan.</p></div><div className="benefit-list">{(customDetails?.benefits || ["Supports everyday balance and comfort", "Complements a personalised wellness routine", "Gentle format for practitioner-guided use", "Easy to include in daily care"]).map((benefit) => <span key={benefit}><Icon name="check" /> {benefit}</span>)}</div></>}
-              {activeTab === "How to use" && <><div><span className="eyebrow">Usage guidance</span><h2>Use with clarity and professional advice.</h2><p>{customDetails?.dosage ? `Recommended dosage: ${customDetails.dosage}` : "Dosage should be determined by a qualified homeopathy practitioner. Avoid self-prescribing for persistent, severe, or recurring symptoms."}</p></div><div className="usage-steps"><span><b>01</b><strong>Consult</strong><small>Share your complete health history.</small></span><span><b>02</b><strong>Follow</strong><small>Use only the advised dose and frequency.</small></span><span><b>03</b><strong>Observe</strong><small>Keep track of changes and responses.</small></span><span><b>04</b><strong>Review</strong><small>Follow up before changing your plan.</small></span></div></>}
-              {activeTab === "Ingredients & safety" && <><div><span className="eyebrow">What’s inside</span><h2>Clear information. Responsible use.</h2><p>{customDetails?.composition ? <><strong>Composition (Each 5ml Contains):</strong><br /><ul style={{ listStyle: "disc", paddingLeft: "20px", marginTop: "12px" }}>{customDetails.composition.map((ingredient) => <li key={ingredient} style={{ marginBottom: "8px" }}>{ingredient}</li>)}</ul></> : "Contains a homeopathic preparation in a standard dispensing base. Exact composition and potency are printed on the product label and may vary by selected format."}</p></div><div className="safety-detail"><strong>Important safety information</strong><ul><li>Read the label carefully before use.</li><li>Keep away from direct sunlight and strong odours.</li><li>Keep out of reach of children.</li><li>Consult a doctor during pregnancy, breastfeeding, or for chronic conditions.</li></ul></div></>}
+              {activeTab === "Overview" && <><div><span className="eyebrow">Product overview</span><h2>Everyday wellness, thoughtfully supported.</h2><p>{product.overview}</p><p>Homeopathy is highly individualised. For meaningful guidance, a practitioner considers not only the primary concern but also personal patterns, triggers, routines, and overall wellbeing.</p></div><div className="info-stat-grid"><span><strong>{product.presentation}</strong><small>Net quantity</small></span><span><strong>GMP</strong><small>Quality standard</small></span><span><strong>36 mo</strong><small>Shelf life</small></span><span><strong>India</strong><small>Country of origin</small></span></div></>}
+              {activeTab === "Benefits" && <><div><span className="eyebrow">Potential benefits</span><h2>Designed to complement whole-person care.</h2><p>When selected appropriately by a qualified professional, this remedy may support the following areas as part of an individualised care plan.</p></div><div className="benefit-list">{product.benefits.map((benefit) => <span key={benefit}><Icon name="check" /> {benefit}</span>)}</div></>}
+              {activeTab === "How to use" && <><div><span className="eyebrow">Usage guidance</span><h2>Use with clarity and professional advice.</h2><p>Recommended dosage: {product.dosage}</p></div><div className="usage-steps"><span><b>01</b><strong>Consult</strong><small>Share your complete health history.</small></span><span><b>02</b><strong>Follow</strong><small>Use only the advised dose and frequency.</small></span><span><b>03</b><strong>Observe</strong><small>Keep track of changes and responses.</small></span><span><b>04</b><strong>Review</strong><small>Follow up before changing your plan.</small></span></div></>}
+              {activeTab === "Ingredients & safety" && <><div><span className="eyebrow">What’s inside</span><h2>Clear information. Responsible use.</h2><p><strong>Composition (Each 5ml Contains):</strong><br /><ul style={{ listStyle: "disc", paddingLeft: "20px", marginTop: "12px" }}>{product.composition.map((ingredient) => <li key={ingredient} style={{ marginBottom: "8px" }}>{ingredient}</li>)}</ul></p></div><div className="safety-detail"><strong>Important safety information</strong><ul><li>Read the label carefully before use.</li><li>Keep away from direct sunlight and strong odours.</li><li>Keep out of reach of children.</li><li>Consult a doctor during pregnancy, breastfeeding, or for chronic conditions.</li></ul></div></>}
             </div>
           </div>
         </section>
